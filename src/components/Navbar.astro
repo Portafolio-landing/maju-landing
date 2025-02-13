@@ -1,0 +1,303 @@
+---
+import LanguageSwitcher from "./LanguageSwitcher.astro";
+
+const { lang } = Astro.props as { lang: "es" | "en" | "de" };
+
+const menuItems = {
+  es: [
+    { name: "Inicio", link: "/" },
+    { name: "Sobre nosotros", link: "/about" },
+    { name: "Menú", link: "/menu" },
+    { name: "Contáctanos", link: "/contact" }
+  ],
+  en: [
+    { name: "Home", link: "/en/" },
+    { name: "About Us", link: "/en/about" },
+    { name: "Menu", link: "/en/menu" },
+    { name: "Contact", link: "/en/contact" }
+  ],
+  de: [
+    { name: "Startseite", link: "/de/" },
+    { name: "Über uns", link: "/de/about" },
+    { name: "Menü", link: "/de/menu" },
+    { name: "Kontakt", link: "/de/contact" }
+  ]
+};
+
+---
+
+<nav class="navbar">
+  <div class="navbar-container">
+    <!-- Logo con enlace al idioma actual -->
+    <a href={lang === "es" ? "/" : `/${lang}/`} class="logo">Maju</a>
+
+
+    <!-- Botón de menú hamburguesa -->
+    <button id="menu-toggle" class="hamburger">
+        <svg id="open-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+    </button>
+
+    <!-- Menú en Desktop -->
+    <ul class="nav-links" id="menu-items">
+      {menuItems[lang]?.map((item) => (
+        <li><a href={item.link} data-close-menu="true">{item.name}</a></li>
+      ))}
+    </ul>
+
+    <!-- Componente de Cambio de Idioma -->
+    <LanguageSwitcher lang={lang} />
+  </div>
+</nav>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.getElementById("menu-toggle");
+    const menuItems = document.getElementById("menu-items");
+
+    function closeMenu() {
+      menuItems.classList.remove("open");
+    }
+
+    menuToggle.addEventListener("click", (event) => {
+      event.stopPropagation();
+      const isMenuOpen = menuItems.classList.contains("open");
+
+      if (!isMenuOpen) {
+        document.dispatchEvent(new Event("close-language"));
+      }
+
+      menuItems.classList.toggle("open", !isMenuOpen);
+    });
+
+    document.addEventListener("close-menu", closeMenu);
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 1000) {
+        closeMenu();
+      }
+    });
+  });
+</script>
+
+  
+
+<style>
+/* Estilos Generales */
+.navbar {
+  background: white;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  z-index: 1000;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Logo */
+.logo {
+  font-family: 'Rouge Script', cursive;
+  font-size: 96px;
+  font-weight: 400;
+  color: #5E3023;
+  text-decoration: none;
+  display: inline-block;
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .logo {
+    font-size: 72px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 48px;
+  }
+}
+
+/* Menú Desktop */
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #5E3023;
+  font-size: 24px;
+  font-weight: 500;
+  padding: 5px 10px;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+/* Subrayado dinámico en hover */
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 4px;
+  background-color: #5E3023;
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+  opacity: 1;
+}
+
+/* Menú móvil */
+.hamburger {
+  display: none;
+  font-size: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #5E3023;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1500; 
+}
+
+.hamburger svg {
+  width: 40px;
+  height: 40px;
+  stroke-width: 2.5;
+}
+
+/* Ocultar la hamburguesa en pantallas grandes */
+@media (min-width: 1001px) {
+  .hamburger {
+    display: none !important;
+  }
+
+  .nav-links {
+    display: flex !important;
+    position: static !important;
+    width: auto !important;
+    background: none !important;
+    box-shadow: none !important;
+    flex-direction: row !important;
+    padding: 0 !important;
+    text-align: left !important;
+  }
+}
+
+/* Estilo del menú móvil */
+@media (max-width: 1000px) {
+  .hamburger {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    text-align: center;
+    z-index: 1000;
+  }
+
+  /* Mostrar menú desplegado cuando esté activo */
+  .nav-links.open {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}
+
+
+/* Selector de idioma */
+.language-switcher {
+  position: relative;
+  display: inline-block;
+}
+
+.lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 28px;
+  font-family: 'Montserrat', sans-serif;
+  color: #5E3023;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+  list-style: none;
+  padding: 10px 0;
+  width: 221px;
+  top: 60px;
+  left: 0;
+  z-index: 100;
+}
+
+.dropdown.open {
+  display: block;
+}
+
+.lang-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  text-decoration: none;
+  color: #5E3023;
+  font-size: 28px;
+  font-family: 'Montserrat', sans-serif;
+  transition: background 0.3s ease;
+  border-radius: 30px;
+}
+
+.lang-option:hover {
+  background: rgba(137, 87, 55, 0.15);
+}
+
+
+</style>
