@@ -1,0 +1,30 @@
+---
+// Importamos las imágenes
+import foto1 from '../assets/foto1.jpg';
+import foto2 from '../assets/foto2.jpeg';
+import foto3 from '../assets/foto3.jpg';
+import foto4 from '../assets/foto4.jpeg';
+import foto5 from '../assets/foto5.jpg';
+---
+
+<style>
+  .imagenes-contenedor {
+    display: flex;          /* Las colocamos en la misma fila */
+    justify-content: center;/* Centramos el contenedor horizontalmente */
+    align-items: flex-start; /* Alineamos las imágenes por arriba */
+    gap: 0;                 /* Ajusta este valor si quieres separación entre imágenes */
+  }
+
+  .imagenes-contenedor img {
+    width: 20%;            /* Cada imagen ocupa el 20% del contenedor (5 imágenes = 5x20% = 100%) */
+    object-fit: cover;     /* Ajusta la imagen para que no se deforme */
+  }
+</style>
+
+<section class="imagenes-contenedor">
+  <img src={foto1.src} alt="Imagen 1" />
+  <img src={foto2.src} alt="Imagen 2" />
+  <img src={foto3.src} alt="Imagen 3" />
+  <img src={foto4.src} alt="Imagen 4" />
+  <img src={foto5.src} alt="Imagen 5" />
+</section>
