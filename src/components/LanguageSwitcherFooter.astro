@@ -1,0 +1,225 @@
+---
+const languages = [
+  { code: "es", name: "ESP", flag: "/src/assets/flags/pe.svg" },
+  { code: "de", name: "GER", flag: "/src/assets/flags/de.svg" },
+  { code: "en", name: "ENG", flag: "/src/assets/flags/gb.svg" }
+];
+
+const url = new URL(Astro.request.url);
+const currentPath = url.pathname;
+const currentLang = currentPath.startsWith("/en") ? "en" : currentPath.startsWith("/de") ? "de" : "es";
+
+interface Props {
+  id?: string;
+}
+
+const { id = "footer-lang-switcher" } = Astro.props;
+---
+
+<div class={`footer-lang-container ${id}`}>
+  <button class="footer-lang-btn" id="footer-lang-toggle" aria-haspopup="true" aria-expanded="false">
+    <img class="footer-flag-icon" src={languages.find(lang => lang.code === currentLang)?.flag} alt={currentLang}>
+    <span class="footer-lang-text">{languages.find(lang => lang.code === currentLang)?.name}</span>
+    <svg class="footer-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6"></path>
+    </svg>
+  </button>
+
+  <ul class="footer-lang-dropdown" id="footer-lang-dropdown">
+    {languages.map((lang) => (
+      <li>
+        <a href={lang.code === "es" ? "/" : `/${lang.code}/`} class="footer-lang-option">
+          <img src={lang.flag} alt={lang.name} class="footer-flag-icon">
+          <span>{lang.name}</span>
+        </a>
+      </li>
+    ))}
+  </ul>
+</div>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const footerLangContainer = document.querySelector('.footer-lang-container');
+    if (!footerLangContainer) return;
+
+    const footerLangToggle = document.getElementById("footer-lang-toggle");
+    const footerLangDropdown = document.getElementById("footer-lang-dropdown");
+
+    if (!footerLangToggle || !footerLangDropdown) return;
+
+    footerLangToggle.addEventListener("click", (event) => {
+      event.stopPropagation();
+      const isLangOpen = footerLangDropdown.classList.contains("open");
+
+      // Cerrar otros dropdowns antes de abrir este
+      document.querySelectorAll('.footer-lang-dropdown').forEach(dropdown => {
+        if (dropdown !== footerLangDropdown) {
+          dropdown.classList.remove("open");
+          dropdown.previousElementSibling.setAttribute("aria-expanded", "false");
+        }
+      });
+
+      footerLangDropdown.classList.toggle("open", !isLangOpen);
+      footerLangToggle.setAttribute("aria-expanded", footerLangDropdown.classList.contains("open"));
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!footerLangToggle.contains(event.target) && !footerLangDropdown.contains(event.target)) {
+        footerLangDropdown.classList.remove("open");
+        footerLangToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    document.addEventListener("close-language", () => {
+      footerLangDropdown.classList.remove("open");
+      footerLangToggle.setAttribute("aria-expanded", "false");
+    });
+
+    const url = new URL(window.location.href);
+    const firstPathSegment = url.pathname.split('/')[1];
+    const currentLang = ["en", "de"].includes(firstPathSegment) ? firstPathSegment : "es";
+
+    const langData = {
+      es: { name: "ESP", flag: "/src/assets/flags/pe.svg" },
+      en: { name: "ENG", flag: "/src/assets/flags/gb.svg" },
+      de: { name: "GER", flag: "/src/assets/flags/de.svg" }
+    };
+
+    const footerFlagIcon = document.querySelector('.footer-flag-icon');
+    const footerLangText = document.querySelector('.footer-lang-text');
+
+    if (footerFlagIcon && footerLangText) {
+      footerFlagIcon.src = langData[currentLang].flag;
+      footerLangText.innerText = langData[currentLang].name;
+    }
+  });
+</script>
+
+<style>
+    .footer-lang-container {
+    position: relative;
+    display: inline-block;
+    }
+
+    /* ✅ Botón de idioma */
+    .footer-lang-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px; 
+    background: white;
+    border: none;
+    padding: 8px 12px; 
+    font-size: 24px; 
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+    color: #5E3023;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    }
+
+    .footer-flag-icon {
+    width: 24px;
+    height: auto;
+    max-width: 24px; 
+    }
+
+    .footer-arrow-icon {
+    width: 24px;
+    height: 24px;
+    stroke: #5E3023;
+    }
+
+    /* ✅ Dropdown */
+    .footer-lang-dropdown {
+    display: none;
+    position: absolute;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+    list-style: none;
+    width: 140px; /*ancho */
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    padding: 5px 0;
+    overflow: hidden;
+    }
+
+    .footer-lang-dropdown.open {
+    display: block;
+    }
+
+    .footer-lang-option {
+    display: flex;
+    align-items: center;
+    gap: 8px; 
+    padding: 10px; 
+    justify-content: center;
+    text-decoration: none;
+    color: #5E3023;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    transition: background 0.3s ease;
+    border-radius: 20px;
+    }
+
+    .footer-lang-option:hover {
+    background: rgba(137, 87, 55, 0.15);
+    }
+
+    @media (max-width: 768px) {
+        .footer-lang-btn {
+            font-size: 20px;
+            padding: 6px 10px;
+        }
+
+        .footer-flag-icon {
+            width: 20px;
+            max-width: 20px;
+        }
+
+        .footer-arrow-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        .footer-lang-dropdown {
+            width: 160px;
+        }
+
+        .footer-lang-option {
+            font-size: 18px;
+            padding: 8px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .footer-lang-btn {
+            font-size: 18px;
+            padding: 5px 8px;
+        }
+
+        .footer-flag-icon {
+            width: 18px;
+            max-width: 18px;
+        }
+
+        .footer-arrow-icon {
+            width: 18px;
+            height: 18px;
+        }
+
+        .footer-lang-dropdown {
+            width: 140px;
+        }
+
+        .footer-lang-option {
+            font-size: 16px;
+            padding: 6px;
+        }
+    }
+
+
+</style>

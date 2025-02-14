@@ -1,5 +1,5 @@
 ---
-import LanguageSwitcher from "./LanguageSwitcher.astro";
+import LanguageSwitcherFooter from "./LanguageSwitcherFooter.astro";
 
 const { lang } = Astro.props as { lang: "es" | "en" | "de" };
 
@@ -48,7 +48,7 @@ const menuItems = {
     </div>
 
     <!-- Selector de Idioma -->
-    <LanguageSwitcher id="footer-lang" />
+    <LanguageSwitcherFooter id="footer-lang" />
   </div>
 
   <hr />
