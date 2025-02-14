@@ -1,0 +1,155 @@
+---
+const slides = [
+  {
+    image: "/prueba.png",
+    text: "Con el paso de los años, Europst... (Texto 1)",
+    year: "2005",
+  },
+  {
+    image: "/prueba.png",
+    text: "En 2010, la familia decidió expa... (Texto 2)",
+    year: "2010",
+  },
+  {
+    image: "/prueba.png",
+    text: "Maquiato llevó su amor por el ca... (Texto 3)",
+    year: "2015",
+  },
+];
+---
+
+<section class="carousel">
+  <div class="carousel-slide">
+    <img id="carousel-image" src={slides[0].image} alt="Historia" />
+    <div class="carousel-text">
+      <p id="carousel-text">{slides[0].text}</p>
+    </div>
+    <div class="carousel-controls">
+      <button id="prev-slide" class="prev">❮</button>
+      <div id="carousel-year" class="year">{slides[0].year}</div>
+      <button id="next-slide" class="next">❯</button>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    let currentIndex = 0;
+    const slides = [
+      {
+        image: "/prueba.png",
+        text: "Con el paso de los años, Europst... (Texto 1)",
+        year: "2005",
+      },
+      {
+        image: "/prueba.png",
+        text: "En 2010, la familia decidió expa... (Texto 2)",
+        year: "2010",
+      },
+      {
+        image: "/prueba.png",
+        text: "Maquiato llevó su amor por el ca... (Texto 3)",
+        year: "2015",
+      },
+    ];
+    const AUTO_PLAY = true;
+    const AUTO_PLAY_INTERVAL = 5000;
+
+    function updateSlide(index: number) {
+      if (index < 0) index = slides.length - 1;
+      if (index >= slides.length) index = 0;
+      currentIndex = index;
+
+      const imgEl = document.getElementById("carousel-image");
+      const textEl = document.getElementById("carousel-text");
+      const yearEl = document.getElementById("carousel-year");
+
+      if (imgEl instanceof HTMLImageElement) imgEl.src = slides[index].image;
+      if (textEl) textEl.innerText = slides[index].text;
+      if (yearEl) yearEl.innerText = slides[index].year;
+    }
+
+    const prevBtn = document.getElementById("prev-slide");
+    const nextBtn = document.getElementById("next-slide");
+
+    if (prevBtn)
+      prevBtn.addEventListener("click", () => updateSlide(currentIndex - 1));
+    if (nextBtn)
+      nextBtn.addEventListener("click", () => updateSlide(currentIndex + 1));
+
+    if (AUTO_PLAY) {
+      setInterval(() => updateSlide(currentIndex + 1), AUTO_PLAY_INTERVAL);
+    }
+  });
+</script>
+
+<style>
+  .carousel {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+    height: 750px;
+  }
+
+  .carousel-slide {
+    height: 650px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    position: relative;
+  }
+
+  .carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .carousel-text {
+    margin: 0;
+    font-size: 0.9rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    position: absolute;
+    width: 100%;
+    color: black;
+    padding: 1rem;
+    text-align: center;
+    background: rgba(217, 217, 217, 0.69);
+  }
+
+  .carousel-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px 0;
+    position: absolute;
+    bottom: -65px;
+  }
+
+  .year {
+    background: #5E3023;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    font-size: 19px;
+    font-family: "Waterfall", sans-serif;
+    font-weight: bold;
+  }
+
+  .prev,
+  .next {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: black;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+</style>

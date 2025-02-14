@@ -1,0 +1,74 @@
+---
+const logo = "/logo.png";
+//const logo = "/logo1.jpg";
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seite in Entwicklung</title>
+</head>
+<body>
+    <div class="construction-container">
+        <img src={logo} alt="Firmenlogo" class="logo" />
+        <h1>Wir arbeiten daran!</h1>
+        <p>Dieser Bereich der Website ist im Aufbau. Schau bald wieder vorbei für weitere Updates.</p>
+        <a href="/de/" class="back-button">Zurück zur Startseite</a>
+    </div>
+</body>
+</html>
+
+<style>
+    body {
+        background: #FDF6F0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        font-family: "Montserrat", sans-serif;
+        text-align: center;
+    }
+
+    .construction-container {
+        background: white;
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        max-width: 500px;
+        text-align: center;
+    }
+
+    .logo {
+        width: 120px;
+        margin-bottom: 10px;
+    }
+
+    h1 {
+        font-size: 28px;
+        color: #895737;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 18px;
+        color: #5e3023;
+        margin-bottom: 20px;
+    }
+
+    .back-button {
+        display: inline-block;
+        background: #895737;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background 0.3s;
+    }
+
+    .back-button:hover {
+        background: #5e3023;
+    }
+</style>

@@ -1,0 +1,69 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+const logo = "/logo.png";
+
+const title = "Page Not Found | Maju";
+const lang = "en";
+---
+
+<BaseLayout lang={lang} title={title}>
+    <div class="error-container">
+        <img src={logo} alt="Company Logo" class="logo" />
+        <h1>Oops! Page not found</h1>
+        <p>Sorry, the page you are looking for does not exist.</p>
+        <a href="/en/" class="back-button">Go back home</a>
+      </div>
+</BaseLayout>
+
+<style>
+  body {
+        background: #FDF6F0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        font-family: "Montserrat", sans-serif;
+        text-align: center;
+    }
+
+    .error-container {
+        background: white;
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        max-width: 500px;
+        text-align: center;
+    }
+
+    .logo {
+        width: 120px;
+        margin-bottom: 10px;
+    }
+
+    h1 {
+        font-size: 28px;
+        color: #895737;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 18px;
+        color: #5e3023;
+        margin-bottom: 20px;
+    }
+
+    .back-button {
+        display: inline-block;
+        background: #895737;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background 0.3s;
+    }
+
+    .back-button:hover {
+        background: #5e3023;
+    }
+</style>
