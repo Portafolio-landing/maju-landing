@@ -1,10 +1,140 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import History from "../components/History.astro";
+import Team from "../components/Team.astro";
+import Values from "../components/Values.astro";
+
 
 const lang = "es";
 const title = "Sobre Nosotros | Maju";
 ---
 
 <BaseLayout lang={lang} title={title}>
-  <h1>Conoce más sobre nosotros</h1>
+  <main class="about-container">
+    <!--
+    <div class="background-elements">
+      <div class="left-pattern-container">
+        {Array(10).fill(null).map((_, index) => (
+          <div 
+            class={index % 2 === 0 ? "coffee-bean-pattern" : "cake-pattern"} 
+            style={`top: ${index * 15}rem;`}
+          ></div>
+        ))}
+      </div>
+      <div class="right-pattern-container">
+        {Array(10).fill(null).map((_, index) => (
+          <div 
+            class={index % 2 === 0 ? "cake-pattern" : "coffee-bean-pattern"} 
+            style={`top: ${index * 15}rem;`}
+          ></div>
+        ))}
+      </div>
+    </div>
+     -->
+    <section class="about-section">
+      <h1>Nuestra historia</h1>
+      <History />
+      <Values />
+      <Team />
+    </section>
+  </main>
 </BaseLayout>
+
+
+<style>
+  .about-container {
+    padding: 2rem 1rem;
+    background-color: #FDF6F0;
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+  }
+
+  .about-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  h1 {
+    font-size: 6rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-family: "Waterfall", sans-serif;
+    font-weight: 400;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 4rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 3rem;
+    }
+  }
+
+  .background-elements {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .left-pattern-container,
+  .right-pattern-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 12rem;
+  }
+
+  .left-pattern-container {
+    left: 0;
+  }
+
+  .right-pattern-container {
+    right: 0;
+  }
+
+  .coffee-bean-pattern,
+  .cake-pattern {
+    position: absolute;
+    border: 8px solid #8B4513;
+    opacity: 0.05;
+  }
+
+  .coffee-bean-pattern {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    transform: rotate(-45deg);
+  }
+
+  .cake-pattern {
+    width: 10rem;
+    height: 6rem;
+    border-radius: 0.5rem;
+    transform: rotate(45deg);
+  }
+
+  .left-pattern-container .coffee-bean-pattern {
+    left: 1rem;
+  }
+
+  .left-pattern-container .cake-pattern {
+    left: 1rem;
+  }
+
+  .right-pattern-container .coffee-bean-pattern {
+    right: 1rem;
+  }
+
+  .right-pattern-container .cake-pattern {
+    right: 1rem;
+  }
+</style>

@@ -1,0 +1,42 @@
+---
+import Carousel from "./Carousel-team/Carousel.tsx";
+---
+
+<section class="team">
+  <h2>Conoce nuestro equipo</h2>
+  <p>
+    Somos un grupo apasionado por los pasteles y el café, dedicados a crear
+    experiencias inolvidables.
+  </p>
+
+  <Carousel client:only="react" />
+</section>
+
+<style>
+  .team {
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  .carousel-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 5rem;
+    margin-bottom: 2.5rem;
+    font-family: "Waterfall", sans-serif;
+    font-weight: 300;
+  }
+
+  p {
+    font-size: 1rem;
+    font-weight: 300px;
+    color: #555;
+    font-family: "Montserrat", sans-serif;
+  }
+</style>
