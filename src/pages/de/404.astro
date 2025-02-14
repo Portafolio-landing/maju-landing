@@ -1,27 +1,22 @@
 ---
+import BaseLayout from "../../layouts/BaseLayout.astro";
 const logo = "/logo.png";
-//const logo = "/logo1.jpg";
+
+const title = "Seite nicht gefunden | Maju";
+const lang = "de";
 ---
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page Under Development</title>
-</head>
-<body>
-    <div class="construction-container">
-        <img src={logo} alt="Company Logo" class="logo" />
-        <h1>We're working on it!</h1>
-        <p>This section of the website is under construction. Come back soon for more updates.</p>
-        <a href="/en/" class="back-button">Back to Home</a>
-    </div>
-</body>
-</html>
+<BaseLayout lang={lang} title={title}>
+    <div class="error-container">
+        <img src={logo} alt="Firmenlogo" class="logo" />
+        <h1>Oops! Seite nicht gefunden</h1>
+        <p>Es tut uns leid, die gesuchte Seite existiert nicht.</p>
+        <a href="/de/" class="back-button">Zurück zur Startseite</a>
+      </div>
+</BaseLayout>
 
 <style>
-    body {
+  body {
         background: #FDF6F0;
         display: flex;
         align-items: center;
@@ -32,7 +27,7 @@ const logo = "/logo.png";
         text-align: center;
     }
 
-    .construction-container {
+    .error-container {
         background: white;
         padding: 40px;
         border-radius: 15px;
