@@ -5,24 +5,28 @@ const languages = [
   { code: "en", name: "ENG", flag: "/src/assets/flags/gb.svg" }
 ];
 
-// Convertimos la URL a un objeto de tipo URL para extraer el pathname correctamente
 const url = new URL(Astro.request.url);
 const currentPath = url.pathname;
 const currentLang = currentPath.startsWith("/en") ? "en" : currentPath.startsWith("/de") ? "de" : "es";
+
+// Añadimos una prop para identificar la instancia
+interface Props {
+  id: string;
+}
+
+const { id } = Astro.props;
 ---
 
-<div class="language-switcher">
-  <!-- Botón de idioma -->
-  <button class="lang-btn" id="lang-toggle" aria-haspopup="true" aria-expanded="false">
-    <img id="current-flag" src={languages.find(lang => lang.code === currentLang)?.flag} alt={currentLang} class="flag-icon">
-    <span id="current-lang">{languages.find(lang => lang.code === currentLang)?.name}</span>
+<div class={`language-switcher ${id}`}>
+  <button class="lang-btn" data-lang-toggle aria-haspopup="true" aria-expanded="false">
+    <img class="current-flag flag-icon" src={languages.find(lang => lang.code === currentLang)?.flag} alt={currentLang}>
+    <span class="current-lang">{languages.find(lang => lang.code === currentLang)?.name}</span>
     <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6"></path>
     </svg>
   </button>
 
-  <!-- Lista desplegable -->
-  <ul class="dropdown" id="lang-dropdown">
+  <ul class="dropdown" data-lang-dropdown>
     {languages.map((lang) => (
       <li>
         <a href={lang.code === "es" ? "/" : `/${lang.code}/`} class="lang-option">
@@ -36,39 +40,54 @@ const currentLang = currentPath.startsWith("/en") ? "en" : currentPath.startsWit
 
 <script is:inline>
   document.addEventListener("DOMContentLoaded", () => {
-    const langToggle = document.getElementById("lang-toggle");
-    const langDropdown = document.getElementById("lang-dropdown");
+    // Inicializar todos los selectores de idioma
+    document.querySelectorAll('.language-switcher').forEach(switcher => {
+      const langToggle = switcher.querySelector('[data-lang-toggle]');
+      const langDropdown = switcher.querySelector('[data-lang-dropdown]');
 
-    langToggle.addEventListener("click", (event) => {
-      event.stopPropagation();
+      langToggle.addEventListener("click", (event) => {
+        event.stopPropagation();
 
-      const isLangOpen = langDropdown.classList.contains("open");
+        const isLangOpen = langDropdown.classList.contains("open");
 
-      // Cerrar el menú hamburguesa si se abre el selector de idioma
-      if (!isLangOpen) {
-        document.dispatchEvent(new Event("close-menu"));
-      }
+        if (!isLangOpen) {
+          document.dispatchEvent(new Event("close-menu"));
+        }
 
-      langDropdown.classList.toggle("open", !isLangOpen);
-      langToggle.setAttribute("aria-expanded", langDropdown.classList.contains("open"));
+        // Cerrar todos los otros dropdowns primero
+        document.querySelectorAll('.dropdown').forEach(dropdown => {
+          if (dropdown !== langDropdown) {
+            dropdown.classList.remove("open");
+            dropdown.previousElementSibling.setAttribute("aria-expanded", "false");
+          }
+        });
+
+        langDropdown.classList.toggle("open", !isLangOpen);
+        langToggle.setAttribute("aria-expanded", langDropdown.classList.contains("open"));
+      });
     });
 
     document.addEventListener("click", (event) => {
-      if (!langToggle.contains(event.target) && !langDropdown.contains(event.target)) {
-        langDropdown.classList.remove("open");
-        langToggle.setAttribute("aria-expanded", "false");
-      }
+      const dropdowns = document.querySelectorAll('.dropdown');
+      dropdowns.forEach(dropdown => {
+        const toggle = dropdown.previousElementSibling;
+        if (!toggle.contains(event.target) && !dropdown.contains(event.target)) {
+          dropdown.classList.remove("open");
+          toggle.setAttribute("aria-expanded", "false");
+        }
+      });
     });
 
-    // Cerrar el dropdown de idiomas si se abre el menú hamburguesa
     document.addEventListener("close-language", () => {
-      langDropdown.classList.remove("open");
-      langToggle.setAttribute("aria-expanded", "false");
+      document.querySelectorAll('.dropdown').forEach(dropdown => {
+        dropdown.classList.remove("open");
+        dropdown.previousElementSibling.setAttribute("aria-expanded", "false");
+      });
     });
 
+    // Actualizar el idioma actual en todos los selectores
     const url = new URL(window.location.href);
     const firstPathSegment = url.pathname.split('/')[1];
-
     const currentLang = ["en", "de"].includes(firstPathSegment) ? firstPathSegment : "es";
 
     const langData = {
@@ -77,21 +96,25 @@ const currentLang = currentPath.startsWith("/en") ? "en" : currentPath.startsWit
       de: { name: "GER", flag: "/src/assets/flags/de.svg" }
     };
 
-    //Actualizar elementos con el idioma actual
-    document.getElementById("current-flag").src = langData[currentLang].flag;
-    document.getElementById("current-lang").innerText = langData[currentLang].name;
+    document.querySelectorAll('.language-switcher').forEach(switcher => {
+      const flagElement = switcher.querySelector('.current-flag');
+      const langElement = switcher.querySelector('.current-lang');
+      
+      if (flagElement && langElement) {
+        flagElement.src = langData[currentLang].flag;
+        langElement.innerText = langData[currentLang].name;
+      }
+    });
   });
 </script>
 
-
 <style>
-  /* Contenedor del selector */
+  /* Los estilos se mantienen igual */
   .language-switcher {
     position: relative;
     display: inline-block;
   }
 
-  /* Botón de idioma */
   .lang-btn {
     display: flex;
     align-items: center;
@@ -108,20 +131,17 @@ const currentLang = currentPath.startsWith("/en") ? "en" : currentPath.startsWit
     transition: background 0.3s ease;
   }
 
-  /* Íconos de banderas */
   .flag-icon {
     width: 30px;
     height: auto;
   }
 
-  /* Ícono de flecha */
   .arrow-icon {
     width: 30px;
     height: 30px;
     stroke: #5E3023;
   }
 
-  /* Lista desplegable */
   .dropdown {
     display: none;
     position: absolute;
@@ -141,7 +161,6 @@ const currentLang = currentPath.startsWith("/en") ? "en" : currentPath.startsWit
     display: block;
   }
 
-  /* Opciones de idioma */
   .lang-option {
     display: flex;
     align-items: center;
@@ -159,7 +178,6 @@ const currentLang = currentPath.startsWith("/en") ? "en" : currentPath.startsWit
   .lang-option:hover {
     background: rgba(137, 87, 55, 0.15);
   }
-
 
   @media (max-width: 1000px) { 
     .language-switcher {
@@ -179,6 +197,4 @@ const currentLang = currentPath.startsWith("/en") ? "en" : currentPath.startsWit
       transform: scale(0.7); 
     }
   }
-
-
 </style>
