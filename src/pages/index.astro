@@ -1,11 +1,15 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import UnderConstruction from "../layouts/UnderConstruction-es.astro";
+import Hero from '../components/Hero.astro';
+import CallToAction from '../components/CallToAction.astro';
+import Gallery from '../components/Gallery.astro';
 
 const lang = "es";
 const title = "Inicio | Maju";
 ---
 
 <BaseLayout lang={lang} title={title}>
-  <UnderConstruction />
+  <Hero />
+  <CallToAction />
+  <Gallery />
 </BaseLayout>
