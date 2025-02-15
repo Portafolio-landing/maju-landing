@@ -221,11 +221,22 @@ const menuItems = {
 }
 
 
-@media (min-width: 768px) and (max-width: 1000px) {
+@media (max-width: 768px) {
   .nav-links {
-    left: -3%;
+    padding: 10px 0; /* ✅ Reduce el padding total */
+    gap: 5px; /* ✅ Reduce la separación entre elementos */
+  }
+
+  .nav-links li {
+    margin: 3px 0; /* ✅ Disminuye el espacio entre los elementos */
+  }
+
+  .nav-links li a {
+    font-size: 18px; /* ✅ Texto más compacto */
+    padding: 8px 5px; /* ✅ Menos espacio alrededor del texto */
   }
 }
+
 
 /* Estilo del menú móvil */
 @media (max-width: 1000px) {
@@ -246,7 +257,7 @@ const menuItems = {
     align-items: center;
     justify-content: center; 
     position: absolute;
-    top: 80px;
+    top: 50px;
     width: 100%;
     background: white;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
