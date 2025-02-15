@@ -45,27 +45,6 @@ const { lang, title } = Astro.props as Props;
     flex-grow: 1; 
     margin-top: 90px;
     }
-    body {
-      margin: 0;
-    }
-
-    @media (max-width: 768px) {
-      main {
-        margin-top: 85px; 
-      }
-      body {
-        margin: 0;
-      }
-    }
-    @media (max-width: 480px) {
-      main {
-        margin-top: 75px; 
-      }
-      body {
-        margin: 0;
-      }
-
-    }
 
     .footer {
     width: 100vw;
@@ -74,6 +53,13 @@ const { lang, title } = Astro.props as Props;
     color: #EEEDEC;
     padding: 40px 20px;
     text-align: center;
+    }
+
+    /* Media query para pantallas medianas */
+    @media (min-width: 360px) and (max-width: 1023px) {
+      main {
+        margin-top: 75px !important;
+      }
     }
 
 </style>

@@ -222,6 +222,14 @@ hr {
   transform: scale(1.1);
 }
 
+.contact-column {
+    text-align: center;
+    max-width: 100%; /* Asegura que se ajuste al ancho disponible */
+    word-wrap: break-word; /* Permite cortar palabras largas si es necesario */
+    overflow-wrap: break-word;
+    white-space: normal; /* Permite que el texto fluya a la siguiente línea */
+}
+
 @media (max-width: 600px) {
   .instagram-icon {
     width: 30px;
@@ -243,7 +251,7 @@ hr {
 /* RESPONSIVE */
 
 /* Ajuste gradual de fuentes en pantallas más pequeñas */
-@media (max-width: 1024px) {
+@media (min-width: 1024px) and (max-width: 1479px) {
   .footer-container {
     margin-left: 20px;
     flex-wrap: nowrap;
@@ -272,7 +280,7 @@ hr {
 }
 
 /* Se mantiene la estructura en dos columnas hasta 500px */
-@media (max-width: 768px) {
+@media (min-width: 768px) and (max-width: 1023px) {
   .footer-container {
     flex-direction: row;
     justify-content: space-around;
@@ -286,10 +294,14 @@ hr {
 
   .footer-info {
     text-align: center;
+    flex-direction: column;
+    gap: 10px;
   }
 
   .footer-menu a, .contact-column p {
     font-size: 16px;
+    text-align: center;
+    width: 150px;
   }
 
   .footer-bottom {
@@ -298,7 +310,7 @@ hr {
 }
 
 /* En pantallas menores a 500px, todo en una columna centrada */
-@media (max-width: 500px) {
+@media (min-width: 500px) and (max-width: 767px) {
   .footer-container {
     flex-direction: column;
     align-items: center;
@@ -323,7 +335,7 @@ hr {
   }
 }
 
-@media (max-width: 360px) {
+@media (min-width: 360px) and (max-width: 499px) {
   .footer-container {
     margin-left: 0;
     flex-direction: column;
@@ -335,10 +347,17 @@ hr {
   .footer-menu {
     text-align: center;
     font-size: 16px;
+    margin-bottom: 1px;
   }
 
   .contact-column {
     text-align: center;
+  }
+
+  .footer-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
   }
 
   .footer-logo {
@@ -352,26 +371,6 @@ hr {
   .footer-bottom {
     margin: 10px;
   }
-}
-
-.contact-column {
-    text-align: center;
-    max-width: 100%; /* Asegura que se ajuste al ancho disponible */
-    word-wrap: break-word; /* Permite cortar palabras largas si es necesario */
-    overflow-wrap: break-word;
-    white-space: normal; /* Permite que el texto fluya a la siguiente línea */
-}
-
-@media (max-width: 600px) {
-    .footer-info {
-        flex-direction: column; /* Hace que las columnas se apilen en pantallas pequeñas */
-        gap: 10px; /* Reduce el espacio entre ellas */
-    }
-
-    .contact-column p {
-        font-size: 18px; /* Reduce el tamaño de fuente en pantallas pequeñas */
-        text-align: center;
-    }
 }
 
 /* 📌 Enlace del teléfono */
