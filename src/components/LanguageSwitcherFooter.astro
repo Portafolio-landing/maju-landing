@@ -117,11 +117,11 @@ const { id = "footer-lang-switcher" } = Astro.props;
     background: white;
     border: none;
     padding: 10px 15px; 
-    font-size: 24px; 
+    font-size: 18px; 
     font-weight: 400;
     font-family: 'Montserrat', sans-serif;
     color: #5E3023;
-    border-radius: 30px;
+    border-radius: 20px;
     cursor: pointer;
     transition: background 0.3s ease;
     }
@@ -143,14 +143,14 @@ const { id = "footer-lang-switcher" } = Astro.props;
     display: none;
     position: absolute;
     background: white;
-    border-radius: 20px;
+    border-radius: 15px;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
     list-style: none;
-    width: 140px; /*ancho */
+    width: 129px;
     top: 100%;
     left: 50%;
     right: 0;
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateY(-140%);
     z-index: 300;
     padding: 5px 0;
     overflow: hidden;
@@ -173,7 +173,6 @@ const { id = "footer-lang-switcher" } = Astro.props;
     font-size: 20px;
     font-family: 'Montserrat', sans-serif;
     transition: background 0.3s ease;
-    border-radius: 20px;
     margin: 0;
     }
 
@@ -234,5 +233,10 @@ const { id = "footer-lang-switcher" } = Astro.props;
         }
     }
 
-
+  @media (max-width: 360px) {
+          .footer-lang-container {
+            padding-bottom: 10px;
+            margin-right: 0;
+          }
+      }
 </style>
