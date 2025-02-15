@@ -23,19 +23,27 @@ const title = "Contáctanos | Maju";
           </p>
         </div>
         <div>
-          <div class="icon-circle">
-            <img src="/marker-icon.svg" alt="Ubicación" class="icon" />
-          </div>
+          <a href="https://www.google.com/maps/place/EUROPOSTRES+MAJU/@-11.9898176,-77.0742235,17z/data=!3m1!4b1!4m6!3m5!1s0x9105ce5ba679629b:0xa934456619a82058!8m2!3d-11.9898176!4d-77.0716432!16s%2Fg%2F11b6vk2k1x?entry=ttu&g_ep=EgoyMDI1MDIxMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="location-link">
+            <div class="icon-circle">
+              <img src="/marker-icon.svg" alt="Ubicación" class="icon" />
+            </div>
+          </a>
           <p>
-            <strong>Úbicanos</strong><br /><br />Av. Las Palmeras N°3864, Los
-            Olivos
+            <strong>Úbicanos</strong><br /><br />
+            <a href="https://www.google.com/maps/place/EUROPOSTRES+MAJU/@-11.9898176,-77.0742235,17z/data=!3m1!4b1!4m6!3m5!1s0x9105ce5ba679629b:0xa934456619a82058!8m2!3d-11.9898176!4d-77.0716432!16s%2Fg%2F11b6vk2k1x?entry=ttu&g_ep=EgoyMDI1MDIxMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="location-text">
+              Av. Las Palmeras N°3864, Los Olivos
+            </a>
           </p>
+          
         </div>
         <div>
           <div class="icon-circle">
             <img src="/gentle.svg" alt="Contacto" class="icon" />
           </div>
-          <p><strong>Contacto</strong><br /><br />+51 995 439 092</p>
+          <p>
+            <strong>Contacto</strong><br /><br />
+            <a href="tel:+51995439092" class="phone-link">+51 995 439 092</a>
+          </p>          
         </div>
       </div>
     </div>
@@ -230,4 +238,36 @@ const title = "Contáctanos | Maju";
       gap: 2rem;
     }
   }
+
+.location-text {
+  text-decoration: none; 
+  color: #000; 
+  font-weight: normal; 
+  transition: color 0.3s ease-in-out, text-decoration 0.3s ease-in-out; 
+}
+
+.location-text:hover {
+  color: #5e3023; 
+  text-decoration: underline; 
+  text-decoration-color: #5e3023;
+  text-decoration-thickness: 2px; 
+  text-underline-offset: 4px; 
+}
+
+.phone-link {
+  text-decoration: none; 
+  color: #000; 
+  font-weight: normal;
+  transition: color 0.3s ease-in-out, text-decoration 0.3s ease-in-out;
+}
+
+
+.phone-link:hover {
+  color: #5e3023; 
+  text-decoration: underline;
+  text-decoration-color: #5e3023;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
 </style>
