@@ -59,6 +59,25 @@
     color: white;
     font-weight: bold;
   }
+
+  @media (min-width: 360px) and (max-width: 767px) {
+    .select-container select {
+      width: 90%;
+    }
+    .select-container select option {
+      font-size: 14px;
+    }
+  }
+
+  /* Media query para pantallas medianas */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .select-container select {
+      width: 92%;
+    }
+    .select-container select option {
+      font-size: 15px;
+    }
+  }
 </style>
 
 <div class="select-container">

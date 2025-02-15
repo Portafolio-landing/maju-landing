@@ -15,16 +15,19 @@
 .product-image {
     width: 80vw;
     height: auto;
-    max-height: 80vh;
+    max-height: 70vh;
     object-fit: cover;
-    border-radius: 15px;
+    border-radius: 20px;
 }
 
 .product-info {
     position: absolute;
     bottom: 0;
-    width: 86.5%;
+    width: 85%;
     padding: 2rem 0;
+    padding-bottom: 3rem;
+    margin: 0;
+    margin-bottom: 4px;
     text-align: center;
     background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(5px);
@@ -32,10 +35,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-radius: 0 0 10px 10px;
+    border-radius: 0 0 15px 15px;
     box-sizing: border-box;
-    margin: 0;
-    margin-left: 6.7%;
+    margin-left: 7.5%;
 }
 
 .title-price {
@@ -119,7 +121,6 @@
     .product-image {
         height: auto;
         max-height: 70vh;
-        border-radius: 15px; 
     }
 
     .product-info {
@@ -159,3 +160,39 @@
         display: none !important;
     }
 }
+
+  /* Media query para celulares con ancho de 360px */
+  @media (min-width: 360px) and (max-width: 767px) {
+
+  }
+
+  /* Media query para pantallas medianas */
+  @media (min-width: 768px) and (max-width: 1023px) {    
+    .product-info {
+        position: absolute;
+        bottom: 0;
+        width: 82%;
+        padding: 2rem 0;
+        padding-bottom: 3rem;
+        margin: 0;
+        margin-bottom: 4px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(5px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0 0 15px 15px;
+        box-sizing: border-box;
+        margin-left: 9%;
+    }
+  }
+
+  /* Media query para pantallas grandes */
+  @media (min-width: 1024px) and (max-width: 1479px) {
+    .product-info {
+        width: 82.6%;
+        margin-left: 8.7%;
+    }
+  }

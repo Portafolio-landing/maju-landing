@@ -31,7 +31,7 @@ import SelectInput from './SelectInput.astro';
   }
 
   .waterfall-title {
-  font-size: 5.8rem; /* 🔹 Aumenta el tamaño del texto */
+  font-size: 80px; /* 🔹 Aumenta el tamaño del texto */
   font-weight: 500; /* 🔹 Hace que se vea más sólido */
   font-family: 'Waterfall', cursive;
   color: black;
@@ -47,6 +47,21 @@ import SelectInput from './SelectInput.astro';
 
     .search-filter-container > * {
       width: 100%; /* 🔹 Ocupa todo el ancho disponible */
+    }
+  }
+
+  /* Media query para pantallas medianas */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .waterfall-title {
+      margin-top: 0px;
+      font-size: 70px;
+    }
+  }
+
+  @media (min-width: 360px) and (max-width: 767px) {
+    .waterfall-title {
+      font-size: 50px;
+      margin: 0 20px;
     }
   }
 </style>
