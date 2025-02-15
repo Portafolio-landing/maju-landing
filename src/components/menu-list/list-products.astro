@@ -166,9 +166,17 @@ interface Product {
 }
 
 /* Media query para celulares con ancho de 360px */
-@media (min-width: 360px) and (max-width: 767px) {
+@media (min-width: 360px) and (max-width: 411px) {
   .list-products {
     margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+  }
+}
+
+@media (min-width: 412px) and (max-width: 767px) {
+  .list-products {
+    margin-left: 45px;
     margin-right: 20px;
     margin-bottom: 30px;
   }
