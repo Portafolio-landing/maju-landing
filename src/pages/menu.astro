@@ -1,4 +1,7 @@
 ---
+import ListProducts from "../components/menu-list/list-products.astro";
+import SearchFilter from "../components/search_filter/SearchFilter.astro";
+import StarProdcuts from "../components/Star-Prodcuts.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";  
 import UnderConstruction from "../layouts/UnderConstruction-es.astro";
 
@@ -6,6 +9,20 @@ const lang = "es";
 const title = "Menú | Maju";
 ---
 
-<BaseLayout lang={lang} title={title}>
-  <UnderConstruction />
+<style>
+  .main-container {
+    background: #F3E9DC;
+    min-height: 100vh;
+    padding: 20px;
+  }
+</style>
+
+<div class="main-container">
+  <BaseLayout lang={lang} title={title}>
+  <!-- <UnderConstruction /> -->
+  <StarProdcuts/>
+  <SearchFilter />
+  <ListProducts/>
 </BaseLayout>
+</div>
+

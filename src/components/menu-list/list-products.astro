@@ -1,0 +1,34 @@
+---
+import CardProduct from './card-product.astro';
+import products from '../../data/products.json';
+
+interface Product {
+  image: string;
+  title: string;
+  description: string;
+  price: number;
+}
+---
+
+<div class="list-products">
+  {products.map((product: Product) => (
+    <CardProduct 
+      image={product.image} 
+      title={product.title} 
+      description={product.description} 
+      price={product.price} 
+    />
+  ))}
+</div>
+
+<style>
+.list-products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1700px; /* Asegura espacio suficiente */
+  margin: 0 auto;
+}
+
+  </style>
