@@ -1,5 +1,6 @@
 ---
 import Navbar from "../components/Navbar.astro"
+import Footer from "../components/Footer.astro";
 export interface Props {
   lang: string;
   title: string;
@@ -26,13 +27,24 @@ const { lang, title } = Astro.props as Props;
   <main>
     <slot />
   </main>
+  <Footer lang={lang} />
 </body>
 </html>
 
 
 <style>
+    html, body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    }
+
     main {
-      margin-top: 90px; 
+    flex-grow: 1; 
+    margin-top: 90px;
+    padding: 20px;
     }
     body {
       margin: 0;
@@ -53,6 +65,17 @@ const { lang, title } = Astro.props as Props;
       body {
         margin: 0;
       }
+
     }
+
+    .footer {
+    width: 100vw;
+    max-width: 100%;
+    background: #322D2D;
+    color: #EEEDEC;
+    padding: 40px 20px;
+    text-align: center;
+    }
+
 </style>
     

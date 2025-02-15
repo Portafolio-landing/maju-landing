@@ -1,0 +1,326 @@
+---
+import LanguageSwitcherFooter from "./LanguageSwitcherFooter.astro";
+
+const { lang } = Astro.props as { lang: "es" | "en" | "de" };
+
+const menuItems = {
+  es: [
+    { name: "Inicio", link: "/" },
+    { name: "Sobre nosotros", link: "/about" },
+    { name: "Menú", link: "/menu" },
+    { name: "Contacto", link: "/contact" }
+  ],
+  en: [
+    { name: "Home", link: "/en/" },
+    { name: "About Us", link: "/en/about" },
+    { name: "Menu", link: "/en/menu" },
+    { name: "Contact", link: "/en/contact" }
+  ],
+  de: [
+    { name: "Startseite", link: "/de/" },
+    { name: "Über uns", link: "/de/about" },
+    { name: "Menü", link: "/de/menu" },
+    { name: "Kontakt", link: "/de/contact" }
+  ]
+};
+---
+
+<footer class="footer">
+  <div class="footer-container">
+    <!-- Logo con enlace a la página de inicio -->
+    <a href={menuItems[lang][0].link} class="footer-logo">Maju</a>
+
+    <!-- Menú con enlaces funcionales -->
+    <ul class="footer-menu">
+      {menuItems[lang].map((item) => (
+        <li><a href={item.link}>{item.name}</a></li>
+      ))}
+    </ul>
+
+    <!-- Información de contacto en dos columnas -->
+    <div class="footer-info">
+      <div class="contact-column">
+        <p><strong>Llámanos</strong><br />995439094</p>
+      </div>
+      <div class="contact-column">
+        <p><strong>Dirección</strong><br />Av. Las Palmeras 3864, Los Olivos</p>
+      </div>
+    </div>
+
+    <!-- Selector de Idioma -->
+    <LanguageSwitcherFooter id="footer-lang" />
+  </div>
+
+  <hr />
+
+  <div class="footer-bottom">
+    <a href="https://www.instagram.com/maju_europostres" target="_blank" class="social-icon">
+      <img src="/src/assets/icons/instagram.svg" alt="Instagram" class="instagram-icon" />
+    </a>
+    <span class="footer-text">Maju @2025</span>
+  </div>
+</footer>
+
+
+<style>
+/* Asegurar que el footer siempre esté en la parte más baja */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden; /* Evita desplazamiento lateral */
+}
+
+/* Contenedor principal para empujar el footer */
+main {
+  flex-grow: 1; 
+}
+
+/* Estilos del footer */
+.footer {
+  background: #322D2D; /* Color de fondo */
+  color: #EEEDEC;
+  padding: 40px 20px;
+  text-align: center;
+  width: 100vw;
+  max-width: 100%;
+  position: relative;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.footer-logo {
+  font-family: 'Rouge Script', cursive;
+  font-size: 90px;
+  font-weight: 400;
+  color: #EEEDEC;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Menú */
+.footer-menu {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.footer-menu li {
+  margin-bottom: 10px;
+  position: relative;
+}
+
+/* Efecto hover */
+.footer-menu a {
+  text-decoration: none;
+  color: #EEEDEC;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+/* Subrayado dinámico */
+.footer-menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 3px; 
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.footer-menu a:hover::after {
+  opacity: 1;
+}
+
+.footer-menu a:hover {
+  color: #FFFFFF;
+}
+
+/* Sección de información de contacto en dos columnas */
+.footer-info {
+  display: flex;
+  gap: 40px;
+}
+
+.contact-column {
+  text-align: left;
+}
+
+.contact-column p {
+  font-size: 24px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  margin: 5px 0;
+}
+
+/* Títulos de contacto */
+.contact-column strong {
+  font-weight: 700;
+}
+
+/* Selector de idioma */
+.footer-language {
+  display: flex;
+  align-items: center;
+}
+
+/* Línea separadora */
+hr {
+  margin: 20px 0;
+  border: 0;
+  height: 1px;
+  background: #EEEDEC;
+}
+
+/* Copyright */
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;  /* Espaciado entre el icono y el texto */
+  margin-top: 20px;
+  font-size: 18px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+}
+
+.instagram-icon {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease-in-out, width 0.3s ease-in-out, height 0.3s ease-in-out;
+}
+
+.instagram-icon:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 600px) {
+  .instagram-icon {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.footer-text {
+  color: #EEEDEC;
+  line-height: 1;
+  display: flex;
+  align-items: center; 
+}
+
+/* RESPONSIVE */
+
+/* Ajuste gradual de fuentes en pantallas más pequeñas */
+@media (max-width: 1000px) {
+  .footer-container {
+    flex-wrap: nowrap;
+    text-align: center;
+  }
+
+  .footer-logo {
+    font-size: 72px;
+  }
+
+  .footer-menu {
+    font-size: 20px;
+  }
+
+  .footer-menu a, .contact-column p {
+    font-size: 20px;
+  }
+
+  .contact-column {
+    text-align: center;
+  }
+}
+
+/* Se mantiene la estructura en dos columnas hasta 500px */
+@media (max-width: 800px) {
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 20px;
+  }
+
+  .footer-menu {
+    text-align: center;
+    font-size: 18px;
+  }
+
+  .footer-info {
+    text-align: center;
+  }
+
+  .contact-column p {
+    font-size: 18px;
+  }
+}
+
+/* En pantallas menores a 500px, todo en una columna centrada */
+@media (max-width: 500px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-menu {
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .contact-column {
+    text-align: center;
+  }
+
+  .footer-logo {
+    font-size: 60px;
+  }
+
+  .contact-column p {
+    font-size: 16px;
+  }
+}
+
+.contact-column {
+    text-align: center;
+    max-width: 100%; /* Asegura que se ajuste al ancho disponible */
+    word-wrap: break-word; /* Permite cortar palabras largas si es necesario */
+    overflow-wrap: break-word;
+    white-space: normal; /* Permite que el texto fluya a la siguiente línea */
+}
+
+@media (max-width: 600px) {
+    .footer-info {
+        flex-direction: column; /* Hace que las columnas se apilen en pantallas pequeñas */
+        gap: 10px; /* Reduce el espacio entre ellas */
+    }
+
+    .contact-column p {
+        font-size: 18px; /* Reduce el tamaño de fuente en pantallas pequeñas */
+        text-align: center;
+    }
+}
+
+
+</style>
