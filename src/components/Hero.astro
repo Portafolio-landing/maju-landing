@@ -1,40 +1,127 @@
----
-import heroImg from '../assets/Hero.jpeg';
----
-
-<section
-  class="relative py-10" 
-  style={`background-image: url('${heroImg.src}'); background-size: cover; background-position: center;`}
->
-  <!-- Overlay para suavizar los tonos de la imagen -->
-  <div class="absolute inset-0 bg-white opacity-50 z-0"></div>
-  
-  <div class="relative z-10 mx-auto px-4 max-w-7xl">
-    <div class="relative h-[400px] p-6">
-      <div class="bg-white bg-opacity-90 p-4 sm:p-6 md:p-8 rounded-md shadow-md max-w-md">
-        <!-- H2 con Montserrat en negrita y color #AB6325 -->
-        <h2 class="font-montserrat font-bold text-1xl md:text-1xl text-[#AB6325] mb-4">
-          Donde la pasión por los pasteles y el café se encuentra
-        </h2>
-        
-        <!-- H1 con Waterfall y color #000000 -->
-        <h1 class="font-waterfall text-3xl md:text-4xl text-[#000000] mb-6">
-          Bienvenidos al Mundo de Maju.
-        </h1>
-        
-        <!-- Párrafo con Montserrat (normal) y color #5E3023 -->
-        <p class="font-montserrat text-base md:text-lg text-[#5E3023] mb-8">
-          Explora nuestra selección única de delicias, desde pasteles artesanales hasta el café más aromático. ¡Déjate sorprender por Maju!
-        </p>
-        
-        <!-- Botón con fondo #5E3023 y texto #FFFFFF -->
-        <button
-          id="menuButton"
-          class="bg-[#5E3023] text-[#FFFFFF] px-4 py-2 rounded-full flex items-center space-x-2 hover:bg-opacity-100 transition duration-300"
-        >
-          <span>Mira nuestro menú</span>
-        </button>
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maju</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Sección Hero -->
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="hero-text">
+          <h2>Donde la pasión por los pasteles y el café se encuentra</h2>
+          <h1>Bienvenidos al Mundo de Maju</h1>
+          <p>
+            Explora nuestra selección única de delicias, desde pasteles
+            artesanales hasta el café más aromático. ¡Déjate sorprender por
+            Maju!
+          </p>
+          <a href="/menu" class="menu-button">Mira nuestro menú</a>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
+
+    <!-- Sección de calidad -->
+    <section class="quality-section">
+      <div class="quality-content">
+        <p>
+          Ofrecemos productos de excelente calidad y platos inspirados en
+          diferentes culturas
+        </p>
+      </div>
+    </section>
+  </body>
+</html>
+
+<style>
+  .hero {
+    background-image: url("Hero.jpeg");
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 5%;
+    position: relative;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    top: 0;
+    left: 0;
+  }
+
+  .hero-content {
+    position: relative;
+    max-width: 600px;
+    background: rgba(243, 233, 220, 0.95);
+    padding: 50px 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .hero-text h2 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    color: #ab6325;
+    font-size: 18px;
+  }
+
+  .hero-text h1 {
+    font-family: "Waterfall", sans-serif;
+    color: #000000;
+    font-size: 80px;
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+
+  .hero-text p {
+    font-family: "Montserrat", sans-serif;
+    color: #5e3023;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .menu-button {
+    display: inline-block;
+    text-decoration: none;
+    background: #5e3023;
+    color: #ffffff;
+    padding: 15px 25px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    flex-shrink: 0;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .menu-button:hover {
+    background: #84402b;
+  }
+
+  .quality-section {
+    background: #f3e9dc;
+    padding: 50px 20px;
+    text-align: center;
+  }
+
+  .quality-content p {
+    font-family: "Waterfall", sans-serif;
+    font-size: 90px;
+    color: #5e3023;
+    width: 80%;
+    margin: 0 auto;
+  }
+</style>
