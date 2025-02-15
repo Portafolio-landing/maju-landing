@@ -34,6 +34,8 @@ const logo = "/logo.png";
 
     .construction-container {
         background: white;
+        margin-top: 100px;
+        margin-bottom: 100px;
         padding: 40px;
         border-radius: 15px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -70,5 +72,59 @@ const logo = "/logo.png";
 
     .back-button:hover {
         background: #5e3023;
+    }
+
+    @media (min-width: 768px) and (max-width: 1479px) {
+        .construction-container {
+            margin-top: 100px;
+            margin-bottom: 25px;
+            padding: 40px;
+        }
+
+        .logo {
+            width: 90px;
+        }
+
+        h1 {
+            font-size: 20px;
+        }
+
+        p {
+            font-size: 16px;
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+        .construction-container {
+            margin-top: 50px;
+            margin-bottom: 30px;
+            padding: 40px;
+        }
+    }
+
+    @media (min-width: 360px) and (max-width: 767px) {
+        .construction-container {
+            margin-top: 100px;
+            margin-bottom: 35px;
+            padding: 10px 5px;
+            width: 90%;
+            justify-self: center;
+        }
+
+        .logo {
+            width: 70px;
+        }
+
+        h1 {
+            font-size: 16px;
+        }
+
+        p {
+            font-size: 14px;
+        }
+
+        .back-button {
+            font-size: 14px;
+        }
     }
 </style>
