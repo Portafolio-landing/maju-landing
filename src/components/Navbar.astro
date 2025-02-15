@@ -108,7 +108,7 @@ const menuItems = {
 .logo {
   font-family: 'Rouge Script', cursive;
   font-size: 70px;
-  font-weight: 400;
+  font-weight: 400px;
   color: #5E3023;
   text-decoration: none;
   display: inline-block;
@@ -142,7 +142,7 @@ const menuItems = {
 .nav-links li a {
   text-decoration: none;
   color: #5E3023;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 500;
   padding: 5px 10px;
   transition: color 0.3s ease;
@@ -188,6 +188,12 @@ const menuItems = {
   width: 40px;
   height: 40px;
   stroke-width: 2.5;
+}
+
+@media (min-width: 1024px) and (max-width: 1169px) {
+  .nav-links li a {
+    font-size: 20px;
+  }
 }
 
 /* Ocultar la hamburguesa en pantallas grandes */
