@@ -3,18 +3,21 @@
     max-width: 100%;
     margin: 0 auto;
     position: relative;
+    overflow: hidden;
 }
 
 .mySwiper {
     width: 100%;
-    height: 100%;
+    height: auto;
+    border-radius: 15px;
 }
 
 .product-image {
-    width: 100%;
-    height: 100vh; 
+    width: 100vw;
+    height: auto;
+    max-height: 80vh;
     object-fit: cover;
-    border-radius: 15px; 
+    border-radius: 15px;
 }
 
 .product-info {
@@ -29,16 +32,19 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    border-radius: 0 0 10px 10px;
+    box-sizing: border-box;
+    margin: 0;
 }
 
 .title-price {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0.5rem; 
+    gap: 0.5rem;
     font-family: 'Waterfall', cursive;
     margin-bottom: 0.6rem;
-    line-height: 1; 
+    line-height: 1;
 }
 
 .title {
@@ -47,7 +53,7 @@
     margin: 0;
     text-align: center;
     display: flex;
-    align-items: center; 
+    align-items: center;
 }
 
 .price {
@@ -109,13 +115,19 @@
 }
 
 @media (max-width: 768px) {
-    .product-info {
-        padding: 1.5rem 0;
+    .product-image {
+        height: auto;
+        max-height: 70vh;
+        border-radius: 15px; 
     }
 
-    .product-image {
-        height: 90vh;
-        border-radius: 10px; 
+    .product-info {
+        position: relative;
+        margin-top: -31px;
+        background: rgba(255, 255, 255, 1);
+        backdrop-filter: none;
+        padding: 2rem 0;
+        border-radius: 0 0 15px 15px;
     }
 
     .title {

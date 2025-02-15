@@ -3,7 +3,7 @@ import CarouselProductos from "./Carousel-Productos/CarouselProductos.jsx"
 ---
 
 <section class="star-products">
-  <h2 class="title">Productos Destacados...</h2>
+  <h2 class="title">Distruta de nuestros productos destacados</h2>
   <div class="carousel-wrapper">
     <CarouselProductos client:only="react" />
   </div>
@@ -12,63 +12,50 @@ import CarouselProductos from "./Carousel-Productos/CarouselProductos.jsx"
 <style>
 .star-products {
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 0.5rem 1rem; /* 🔹 Reducir padding superior */
   max-width: 100%;
-  overflow: hidden; /* Evita desbordamientos */
+  overflow: hidden;
 }
 
 .title {
-  margin: 16px 0;
+  margin: 0px auto; /* 🔹 Reducir margen superior */
   font-weight: bold;
-  font-size: 80px;
-  color: #895737;
+  font-size: 100px;
+  color: #5e3023;
   word-wrap: break-word;
   font-family: 'Waterfall', cursive;
+  text-align: center;
+  display: block;
+  width: 100%;
 }
 
 /* RESPONSIVE DESIGN */
 @media (max-width: 1024px) {
   .title {
-    font-size: 60px; /* Reducir tamaño en tablets */
+    font-size: 60px;
+    margin: 5px auto; /* 🔹 Ajustar margen en tablets */
   }
 }
 
 @media (max-width: 768px) {
   .title {
-    font-size: 50px; /* Ajustar tamaño en móviles medianos */
+    font-size: 50px;
+    margin: 5px auto; /* 🔹 Menos espacio arriba en móviles */
   }
 
   .star-products {
-    padding: 1rem; /* Reducir padding para dar más espacio */
-  }
-
-  /* Apilar imagen y texto en móviles */
-  .carousel-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .carousel-wrapper .image-container, 
-  .carousel-wrapper .text-container {
-    width: 100%; /* Ocupar todo el ancho disponible */
-    max-width: 90%; /* Mantener márgenes */
-  }
-
-  .text-container {
-    margin-top: 15px; /* Espacio entre la imagen y el texto */
+    padding: 0.5rem; /* 🔹 Ajustar padding en móviles */
   }
 }
 
 @media (max-width: 480px) {
   .title {
-    font-size: 40px; /* Compactar en móviles pequeños */
-    text-align: center;
+    font-size: 40px;
+    margin: 3px auto; /* 🔹 Compactar en móviles pequeños */
   }
 
   .star-products {
-    padding: 0.5rem; /* Reducir más el padding en móviles */
+    padding: 0.3rem; /* 🔹 Reducir padding en móviles */
   }
 }
 
