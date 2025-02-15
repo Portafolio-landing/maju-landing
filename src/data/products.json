@@ -1,125 +1,125 @@
 [
   {
-    "image": "public/card-product.png",
+    "image": "/card-product.png",
     "title": "Frappé de Fresa",
     "description": "Fresas naturales, leche evaporada y jarabe de goma, con un toque especial de la casa.",
     "price": 4.5,
     "category": "Frappé"
   },
   {
-    "image": "public/card-product.png",
+    "image": "/card-product.png",
     "title": "Frappé de Chocolate",
     "description": "Cacao, fudge y leche evaporada, combinados con ingredientes secretos para realzar el sabor.",
     "price": 4.8,
     "category": "Frappé"
   },
   {
-    "image": "public/card-product.png",
+    "image": "/card-product.png",
     "title": "Frappé de Moca",
     "description": "Espresso, fudge y leche evaporada, con un balance único de dulzura y café.",
     "price": 4.7,
     "category": "Frappé"
   },
   {
-    "image": "public/card-product.png",
+    "image": "/card-product.png",
     "title": "Frappé de Lúcuma",
     "description": "Lúcuma, leche evaporada y un toque de canela, con un ingrediente especial que potencia su cremosidad.",
     "price": 5.0,
     "category": "Frappé"
   },
   {
-    "image": "public/card-product.png",
+    "image": "/card-product.png",
     "title": "Frappé Maju",
     "description": "Café, manjar blanco y helado de vainilla, con un secreto dulce de la casa.",
     "price": 5.5,
     "category": "Frappé"
   },
   {
-    "image": "public/card-product.png",
+    "image": "/card-product.png",
     "title": "Frappé de Algarrobina",
     "description": "Algarrobina, leche evaporada y canela, con un giro especial de nuestra receta exclusiva.",
     "price": 4.9,
     "category": "Frappé"
   },
   {
-    "image": "public/card-product.png",
+    "image": "/card-product.png",
     "title": "Frappé de Caramelo",
     "description": "Caramelo, manjar blanco y leche evaporada, con un toque secreto para un sabor más intenso.",
     "price": 4.6,
     "category": "Frappé"
   },
   {
-    "image": "public/card-product.png",
+    "image": "/card-product.png",
     "title": "Frappé de Oreo",
     "description": "Galletas Oreo, leche evaporada y leche condensada, con una textura especial gracias a nuestra receta única.",
     "price": 4.7,
     "category": "Frappé"
   },
   {
-    "image": "public/card-product.png",
+    "image": "/card-product.png",
     "title": "Frappé de Maracuyá",
     "description": "Pulpa de maracuyá, leche evaporada y jarabe de goma, con un toque secreto para equilibrar la acidez.",
     "price": 4.4,
     "category": "Frappé"
   },
   {
-    "image": "public/card-product.png",
+    "image": "/card-product.png",
     "title": "Frappé de Mango",
     "description": "Mango natural, leche evaporada y jarabe de goma, con un ingrediente especial que resalta su frescura.",
     "price": 4.5,
     "category": "Frappé"
   },
   {
-    "image": "public/card-product.png",
+    "image": "/card-product.png",
     "title": "Americano",
     "description": "Espresso doble con agua caliente, preparado con nuestro toque especial.",
     "price": 3.0,
     "category": "Café"
   },
   {
-    "image": "public/card-product.png",
+    "image": "/card-product.png",
     "title": "Espresso",
     "description": "Café concentrado en versión simple o doble, con una selección especial de granos.",
     "price": 2.5,
     "category": "Café"
   },
   {
-    "image": "public/card-product.png",
+    "image": "/card-product.png",
     "title": "Latte",
     "description": "Espresso doble con leche vaporizada, con un secreto que realza su suavidad.",
     "price": 3.5,
     "category": "Café"
   },
   {
-    "image": "public/card-product.png",
+    "image": "/card-product.png",
     "title": "Cappuccino",
     "description": "Espresso con leche espumada, con un balance perfecto de cremosidad y aroma.",
     "price": 3.8,
     "category": "Café"
   },
   {
-    "image": "public/card-product.png",
+    "image": "/card-product.png",
     "title": "Orange Coffee",
     "description": "Espresso con jugo de naranja y hielo, con un toque especial para potenciar su frescura.",
     "price": 4.2,
     "category": "Especialidad"
   },
   {
-    "image": "public/card-product.png",
+    "image": "/card-product.png",
     "title": "Julia’s Coffee",
     "description": "Espresso, maracuyá y ginger ale, con un secreto de la casa que lo hace único.",
     "price": 5.0,
     "category": "Especialidad"
   },
   {
-    "image": "public/card-product.png",
+    "image": "/card-product.png",
     "title": "Maggie’s Little London",
     "description": "Espresso, flor de Jamaica y jugo de naranja, con un ingrediente especial que lo diferencia.",
     "price": 4.8,
     "category": "Especialidad"
   },
   {
-    "image": "public/card-product.png",
+    "image": "/card-product.png",
     "title": "London Coffee",
     "description": "Café con Baileys y leche batida fría, con un toque secreto que le da un sabor inigualable.",
     "price": 5.5,
