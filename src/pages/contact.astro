@@ -37,16 +37,40 @@ const title = "Contáctanos | Maju";
           
         </div>
         <div>
-          <a href="tel:+51995439092">
-          <div class="icon-circle">
-            <img src="/gentle.svg" alt="Contacto" class="icon" />
-          </div>
+          <!-- Ícono con enlace a WhatsApp para móviles -->
+          <a href="https://wa.me/51995439092?text=Hola%20quiero%20información%20sobre%20la%20carta"
+             target="_blank" class="whatsapp-icon mobile-link">
+            <div class="icon-circle">
+              <img src="/whatsapp.svg" alt="WhatsApp Móvil" class="icon" />
+            </div>
           </a>
+        
+          <!-- Ícono con enlace a WhatsApp Web para computadoras -->
+          <a href="https://web.whatsapp.com/send?phone=51995439092&text=Hola%20quiero%20información%20sobre%20la%20carta"
+             target="_blank" class="whatsapp-icon desktop-link">
+            <div class="icon-circle">
+              <img src="/gentle.svg" alt="WhatsApp Web" class="icon" />
+            </div>
+          </a>
+        
           <p>
             <strong>Contacto</strong><br /><br />
-            <a href="tel:+51995439092" class="phone-link">+51 995 439 092</a>
-          </p>          
+        
+            <!-- Enlace para móviles -->
+            <a href="https://wa.me/51995439092?text=Hola%20quiero%20información%20sobre%20la%20carta"
+               target="_blank" class="phone-link mobile-link">
+              +51 995 439 092
+            </a>
+        
+            <!-- Enlace para WhatsApp Web -->
+            <a href="https://web.whatsapp.com/send?phone=51995439092&text=Hola%20quiero%20información%20sobre%20la%20carta"
+               target="_blank" class="phone-link desktop-link">
+              +51 995 439 092
+            </a>
+          </p>
         </div>
+        
+        
       </div>
     </div>
     <Map client:only="react" />
@@ -59,6 +83,8 @@ const title = "Contáctanos | Maju";
       </a>
     </div>
   </main>
+
+  
 </BaseLayout>
 
 
@@ -265,6 +291,24 @@ const title = "Contáctanos | Maju";
   text-decoration-color: #5e3023;
   text-decoration-thickness: 2px;
   text-underline-offset: 4px;
+}
+
+.mobile-link {
+  display: none; 
+}
+
+.desktop-link {
+  display: inline-block; 
+}
+
+@media only screen and (max-width: 768px) {
+  .mobile-link {
+    display: inline-block; 
+  }
+
+  .desktop-link {
+    display: none; 
+  }
 }
 
 </style>
