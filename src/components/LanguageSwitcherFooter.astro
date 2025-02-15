@@ -80,9 +80,9 @@ const { id = "footer-lang-switcher" } = Astro.props;
     const currentLang = ["en", "de"].includes(firstPathSegment) ? firstPathSegment : "es";
 
     const langData = {
-      es: { name: "ESP", flag: "/src/assets/flags/pe.svg" },
-      en: { name: "ENG", flag: "/src/assets/flags/gb.svg" },
-      de: { name: "GER", flag: "/src/assets/flags/de.svg" }
+      es: { name: "ESP", flag: "/pe.svg" },
+      en: { name: "ENG", flag: "/gb.svg" },
+      de: { name: "GER", flag: "/de.svg" }
     };
 
     const footerFlagIcon = document.querySelector('.footer-flag-icon');
