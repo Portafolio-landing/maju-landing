@@ -179,20 +179,21 @@ const { id } = Astro.props;
     background: rgba(137, 87, 55, 0.15);
   }
 
-  @media (max-width: 1000px) { 
+  @media (min-width: 1024px) and (max-width: 1479px) { 
     .language-switcher {
       margin-right: 30px;
       transform: scale(0.9); 
     }
   }
 
-  @media (max-width: 768px) { 
+  @media (min-width: 768px) and (max-width: 1023px) { 
     .language-switcher {
+      margin-right: 30px;
       transform: scale(0.8);
     }
   }
 
-  @media (max-width: 480px) { 
+  @media (min-width: 360px) and (max-width: 767px) { 
     .language-switcher {
       transform: scale(0.7); 
     }
