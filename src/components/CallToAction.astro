@@ -1,0 +1,21 @@
+---
+const metrics = [
+  { label: 'Ofrecemos productos de excelente calidad y platos inspirados en diferentes culturas' }
+];
+---
+
+<section class="bg-[#F3E9DC] py-16">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-col md:flex-row justify-center items-center space-y-0 md:space-y-0">
+      {metrics.map((metric) => (
+        <div class="text-center md:w-1/2 md:pr-12">
+          <div class="flex items-baseline justify-center">
+            <span class="text-5xl font-waterfall text-[#5E3023]">
+              {metric.label}
+            </span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,7 +1,26 @@
 @import "tailwindcss";
 
 main {
-    margin-top: 80px;
-    padding: 20px;
+  margin-top: 90px; 
+}
+body {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  main {
+    margin-top: 85px; 
   }
+  body {
+    margin: 0;
+  }
+}
+@media (max-width: 480px) {
+  main {
+    margin-top: 75px; 
+  }
+  body {
+    margin: 0;
+  }
+}
   

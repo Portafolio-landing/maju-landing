@@ -1,0 +1,91 @@
+---
+export interface ValueProps {
+  title: string;
+  description: string;
+}
+
+const values: ValueProps[] = [
+  {
+    title: "Calidad excepcional",
+    description:
+      "Cada producto es una obra maestra, elaborada con los mejores ingredientes.",
+  },
+  {
+    title: "Compromiso",
+    description:
+      "Nos enfocamos en brindar la mejor experiencia a nuestros clientes.",
+  },
+  {
+    title: "Pasión",
+    description: "Amamos lo que hacemos y eso se refleja en nuestro trabajo.",
+  },
+  {
+    title: "Innovación",
+    description:
+      "Buscamos constantemente nuevas formas de mejorar y sorprender.",
+  },
+];
+
+import Card from "./Card-values.astro";
+---
+
+<section class="values">
+  <h2>Nuestros valores</h2>
+  <div class="values-container">
+    {
+      values.map((value) => (
+        <Card title={value.title} description={value.description} />
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .values {
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  .values-container {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1000px;
+    margin: 0 auto;
+    justify-content: center;
+  }
+
+  @media (max-width: 1024px) {
+    .values-container {
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 700px;
+    }
+
+    .values-container > div:nth-child(3) {
+      grid-column: span 2;
+      justify-self: center;
+    }
+  }
+
+  @media (max-width: 780px) {
+    .values-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+  }
+
+  h2 {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    font-family: "Waterfall", sans-serif;
+    font-weight: 300;
+  }
+
+  @media (max-width: 480px) {
+    h2 {
+      font-size: 3rem;
+    }
+  }
+</style>

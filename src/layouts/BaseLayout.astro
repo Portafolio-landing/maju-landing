@@ -43,8 +43,29 @@ const { lang, title } = Astro.props as Props;
 
     main {
     flex-grow: 1; 
-    margin-top: 80px;
+    margin-top: 90px;
     padding: 20px;
+    }
+    body {
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      main {
+        margin-top: 85px; 
+      }
+      body {
+        margin: 0;
+      }
+    }
+    @media (max-width: 480px) {
+      main {
+        margin-top: 75px; 
+      }
+      body {
+        margin: 0;
+      }
+
     }
 
     .footer {
