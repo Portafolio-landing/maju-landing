@@ -43,7 +43,7 @@ import Card from "./Card-values.astro";
 <style>
   .values {
     text-align: center;
-    padding: 2rem 1rem;
+    padding: 0rem 1rem;
   }
 
   .values-container {
@@ -53,6 +53,14 @@ import Card from "./Card-values.astro";
     max-width: 1000px;
     margin: 0 auto;
     justify-content: center;
+  }
+
+  h2 {
+    margin-top: 1rem;
+    font-size: 5rem;
+    margin-bottom: 2rem;
+    font-family: "Waterfall", sans-serif;
+    font-weight: 300;
   }
 
   @media (max-width: 1024px) {
@@ -67,7 +75,7 @@ import Card from "./Card-values.astro";
     }
   }
 
-  @media (max-width: 780px) {
+  @media (max-width: 768px) {
     .values-container {
       display: flex;
       flex-direction: column;
@@ -76,16 +84,9 @@ import Card from "./Card-values.astro";
     }
   }
 
-  h2 {
-    font-size: 4rem;
-    margin-bottom: 2rem;
-    font-family: "Waterfall", sans-serif;
-    font-weight: 300;
-  }
-
-  @media (max-width: 480px) {
+  @media (max-width: 360px) {
     h2 {
-      font-size: 3rem;
+      font-size: 4rem;
     }
-  }
+}
 </style>

@@ -2,7 +2,6 @@
     width: 100%;
     max-width: 1000px;
     margin: auto;
-    padding: 20px;
 }
 
 .swiper {
@@ -28,4 +27,14 @@
 
 .swiper-pagination-bullet-active {
     opacity: 1;
+}
+
+@media (max-width: 360px) {
+    .carousel-slide {
+        height: 500px !important;
+    }
+
+    .carousel {
+        height: 570px !important;
+    }
 }

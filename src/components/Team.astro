@@ -18,14 +18,8 @@ import Carousel from "./Carousel-team/Carousel.tsx";
     padding: 2rem 1rem;
   }
 
-  .carousel-container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-
   h2 {
+    margin-top: 1rem;
     text-align: center;
     font-size: 5rem;
     margin-bottom: 2.5rem;
@@ -38,5 +32,12 @@ import Carousel from "./Carousel-team/Carousel.tsx";
     font-weight: 300px;
     color: #555;
     font-family: "Montserrat", sans-serif;
+  }
+
+  @media (max-width: 360px) {
+    h2 {
+      font-size: 4rem;
+      line-height: 0.7;
+    }
   }
 </style>
