@@ -9,25 +9,25 @@ import "./Carousel.css";
 
 const founders = [
   {
-    imagen: "public/card-product.png",
+    imagen: "/card-product.png",
     name: "Luisa Ramirez",
     rol: "Chef principal",
     description: "Primer fundador de la empresa Maju",
   },
   {
-    imagen: "public/card-product.png",
+    imagen: "/card-product.png",
     name: "Carlos Perez",
     rol: "Chef pastelero",
     description: "Experto en repostería artesanal",
   },
   {
-    imagen: "public/card-product.png",
+    imagen: "/card-product.png",
     name: "Andrea López",
     rol: "Barista",
     description: "Apasionada por el arte del café",
   },
   {
-    imagen: "public/card-product.png",
+    imagen: "/card-product.png",
     name: "Pedro Martinez",
     rol: "Gerente",
     description: "Encargado de la administración",

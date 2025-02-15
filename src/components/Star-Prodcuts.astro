@@ -18,12 +18,13 @@ import CarouselProductos from "./Carousel-Productos/CarouselProductos.jsx"
 }
 
 .title {
-  margin: 0px auto; 
-  font-weight: bold;
+  margin: 0px auto;
+  margin-bottom: 20px; 
+  font-weight: normal;
   font-size: 100px;
   color: #5e3023;
   word-wrap: break-word;
-  font-family: 'Waterfall', cursive;
+  font-family: 'Waterfall', sans-serif;
   text-align: center;
   display: block;
   width: 100%;
@@ -56,6 +57,29 @@ import CarouselProductos from "./Carousel-Productos/CarouselProductos.jsx"
 
   .star-products {
     padding: 0.3rem; 
+  }
+}
+
+/* Media query para celulares con ancho de 360px */
+@media (min-width: 360px) and (max-width: 767px) {
+  .title {
+    margin-top: 0;
+    font-size: 50px;
+    margin-bottom: 20px;
+  }
+}
+
+/* Media query para pantallas medianas */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .title {
+    font-size: 70px;
+  }
+}
+
+/* Media query para pantallas grandes */
+@media (min-width: 1024px) and (max-width: 1479px) {
+  .title {
+    font-size: 80px;
   }
 }
 

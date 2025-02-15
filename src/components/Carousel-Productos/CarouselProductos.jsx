@@ -7,25 +7,25 @@ import "./CarouselProductos.css";
 
 const productos = [
   {
-    imagen: "/public/dest1.jpg",
+    imagen: "/dest1.JPG",
     name: "Tarta de Chocolate",
     price: "S/ 15.00",
     description: "Deliciosa tarta de chocolate con cobertura de cacao puro y almendras caramelizadas."
   },
   {
-    imagen: "/public/dest2.jpg",
+    imagen: "/dest2.JPG",
     name: "Croissant de Almendra",
     price: "S/ 10.50",
     description: "Hojaldre crujiente relleno de crema de almendra con un toque de azúcar glas."
   },
   {
-    imagen: "/public/dest3.jpg",
+    imagen: "/dest3.JPG",
     name: "Pastel de Fresas",
     price: "S/ 18.00",
     description: "Esponjoso bizcocho de vainilla con fresas frescas y crema batida."
   },
   {
-    imagen: "/public/dest4.jpg",
+    imagen: "/dest4.JPG",
     name: "Macarons Franceses",
     price: "S/ 12.00",
     description: "Coloridos y crujientes macarons con rellenos de frambuesa, pistacho y chocolate."
