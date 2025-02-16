@@ -3,15 +3,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import History from "../components/History.astro";
 import Team from "../components/Team.astro";
 import Values from "../components/Values.astro";
-
+import UnderConstruction from "../layouts/UnderConstruction-es.astro";
 
 const lang = "es";
 const title = "Sobre Nosotros | Maju";
 ---
 
 <BaseLayout lang={lang} title={title}>
+  <UnderConstruction />
+  <!--
   <main class="about-container">
-    <!--
     <div class="background-elements">
       <div class="left-pattern-container">
         {Array(10).fill(null).map((_, index) => (
@@ -30,7 +31,9 @@ const title = "Sobre Nosotros | Maju";
         ))}
       </div>
     </div>
-     -->
+
+
+
     <section class="about-section">
       <h1>Nuestra historia</h1>
       <History />
@@ -38,6 +41,7 @@ const title = "Sobre Nosotros | Maju";
       <Team />
     </section>
   </main>
+  -->
 </BaseLayout>
 
 
