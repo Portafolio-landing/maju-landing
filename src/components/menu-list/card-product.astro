@@ -65,7 +65,6 @@
   align-items: flex-start;
   font-family: 'Waterfall', cursive;
   min-height: 70px;
-  margin-bottom: 0.5rem;
   padding: 0 5%;
 }
 
@@ -102,7 +101,6 @@
   overflow: hidden;
   padding-left:0;
   padding-right:0;
-  align-items: center;
 }
 
 .card:hover {
@@ -130,6 +128,41 @@
 
   .description {
     font-size: 16px;
+  }
+}
+
+/* Media query para celulares con ancho de 360px */
+@media (min-width: 360px) and (max-width: 767px) {
+  .description {
+    margin-bottom: 30px;
+  }
+
+  .title {
+    font-size: 35px;
+  }
+}
+
+@media (min-width: 390px) and (max-width: 429px) {
+  .card {
+    margin-left: 15px;
+  }
+}
+
+@media (min-width: 430px) and (max-width: 767px) {
+  .card {
+    margin-left: 10px;
+  }
+}
+
+/* Media query para pantallas medianas */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .description {
+    margin-bottom: 30px;
+    font-size: 16px;
+  }
+
+  .title {
+    font-size: 35px;
   }
 }
 
