@@ -7,6 +7,8 @@ interface Product {
   title: string;
   description: string;
   price: number;
+  price_whole: number | null;
+  category: string;
 }
 ---
 
@@ -17,6 +19,7 @@ interface Product {
       title={product.title} 
       description={product.description} 
       price={product.price} 
+      price_whole={product.price_whole}
     />
   ))}
 </div>
@@ -28,10 +31,9 @@ interface Product {
   gap: 20px; 
   max-width: 1700px;
   margin: 0 auto;
-  justify-content: center;
+  justify-content: center; /* Centra las tarjetas */
   align-items: stretch; 
   padding: 10px;
-  margin-left: 25px;
   margin-bottom: 30px;
 }
 

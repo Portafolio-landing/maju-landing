@@ -1,3 +1,5 @@
+
+
 <style>
   .select-container {
     position: relative;
@@ -60,6 +62,8 @@
     font-weight: bold;
   }
 
+  
+
   @media (min-width: 360px) and (max-width: 767px) {
     .select-container select {
       width: 90%;
@@ -80,11 +84,19 @@
   }
 </style>
 
+
 <div class="select-container">
-  <select>
-    <option value="">Seleccionar...</option>
-    <option value="1">Opción 1</option>
-    <option value="2">Opción 2</option>
-    <option value="3">Opción 3</option>
-  </select>
+  <select id="categoryFilter" onchange="filterProducts()">
+    <option value="">Todo...</option>
+    <option value="Tortas">Tortas</option>
+    <option value="Postres adicionales">Postres adicionales</option>
+    <option value="Helados">Helados</option>
+    <option value="Frappés">Frappés</option>
+    <option value="Salados">Salados</option>
+    <option value="Cafés y bebidas calientes">Cafés y bebidas calientes</option>
+    <option value="Jugos y bebidas frias">Jugos y bebidas frías</option>
+    <option value="Infusiones">Infusiones</option>
+    <option value="Galletas y keke">Galletas y keke</option>
+    <option value="Otras bebidas">Otras bebidas</option>
+  </select>  
 </div>

@@ -1,128 +1,586 @@
 [
   {
+    "image": "/tres_leches_de_vainilla.JPG",
+    "title": "Torta Tres Leches (Vainilla)",
+    "description": "Bizcocho esponjoso bañado en tres tipos de leche.",
+    "price": 10,
+    "price_whole": 100,
+    "category": "Productos"
+  },
+  {
+    "image": "/torta de higo.JPG",
+    "title": "Torta de Higo",
+    "description": "Queque con crema Chantilly y puré de higo.",
+    "price": 12,
+    "price_whole": 120,
+    "category": "Productos"
+  },
+  {
+    "image": "/card-product.png",
+    "title": "Torta Helada",
+    "description": "Con crema volteada y un toque secreto; descripción pendiente.",
+    "price": 10,
+    "price_whole": 100,
+    "category": "Productos"
+  },
+  {
+    "image": "/card-product.png",
+    "title": "Postre de la Casa (Light)",
+    "description": "Especial con stevia, yogurt griego, duraznos y queque de vainilla, con nuestro secreto adicional.",
+    "price": 10,
+    "price_whole": 100,
+    "category": "Productos"
+  },
+  {
+    "image": "/la_charlotte.JPG",
+    "title": "Charlotte",
+    "description": "Bizcochuelo de vainilla con biscotes italianos y Chantilly.",
+    "price": 10,
+    "price_whole": 100,
+    "category": "Productos"
+  },
+  {
+    "image": "/bruselina de lucuma.JPG",
+    "title": "Bruselina de Lúcuma",
+    "description": "Galletas de chocolate con mousse y crema de lúcuma.",
+    "price": 10,
+    "price_whole": 100,
+    "category": "Productos"
+  },
+  {
+    "image": "/cheesecake_maracuya.JPG",
+    "title": "Crocante de Maracuyá",
+    "description": "Inspirado en el suspiro limeño con crema de maracuyá.",
+    "price": 10,
+    "price_whole": 100,
+    "category": "Productos"
+  },
+  {
+    "image": "/la_marquesita.JPG",
+    "title": "Marquesita",
+    "description": "Queque de vainilla con base de galleta de vainilla, Chantilly, mermelada casera y fresas.",
+    "price": 10,
+    "price_whole": 100,
+    "category": "Productos"
+  },
+  {
+    "image": "/tartaleta de fresa.JPG",
+    "title": "Tartaleta de Fresa",
+    "description": "Base de galleta con relleno de crema pastelera y fruta fresca.",
+    "price": 10,
+    "price_whole": 100,
+    "category": "Productos"
+  },
+  {
+    "image": "/tartaleta_de_mango.JPG",
+    "title": "Tartaleta de Mango",
+    "description": "Base de galleta con relleno de crema pastelera y fruta fresca.",
+    "price": 10,
+    "price_whole": 100,
+    "category": "Productos"
+  },
+  {
+    "image": "/bavarois de guindones.JPG",
+    "title": "Barbarúa de Guindones",
+    "description": "Postre a base de claras de huevo con salsa de caramelo y guindones secos.",
+    "price": 10,
+    "price_whole": null,
+    "category": "Postres y dulces adicionales"
+  },
+  {
+    "image": "/crocante_de_manzana.JPG",
+    "title": "Crocante de Manzana",
+    "description": "Masa tipo galleta con relleno de manzana, crema de vainilla y streußel.",
+    "price": 10,
+    "price_whole": null,
+    "category": "Postres y dulces adicionales"
+  },
+  {
+    "image": "/card-product.png",
+    "title": "Crema Volteada",
+    "description": "Clásico postre peruano, con textura suave y un toque secreto.",
+    "price": 10,
+    "price_whole": null,
+    "category": "Postres y dulces adicionales"
+  },
+  {
+    "image": "/la_francesa_de_limon.JPG",
+    "title": "Queque de Limón",
+    "description": "Queque de limón (sabor intenso).",
+    "price": 12,
+    "price_whole": null,
+    "category": "Postres y dulces adicionales"
+  },
+  {
+    "image": "/card-product.png",
+    "title": "Alfajor Limeño",
+    "description": "Tradicional alfajor peruano con manjar blanco.",
+    "price": 5,
+    "price_whole": null,
+    "category": "Postres y dulces adicionales"
+  },
+  {
+    "image": "/card-product.png",
+    "title": "Leche Asada",
+    "description": "Clásico postre de leche horneada con caramelo.",
+    "price": 9,
+    "price_whole": null,
+    "category": "Postres y dulces adicionales"
+  },
+  {
+    "image": "/card-product.png",
+    "title": "Relámpago",
+    "description": "(Descripción pendiente).",
+    "price": 9,
+    "price_whole": null,
+    "category": "Postres y dulces adicionales"
+  },
+  {
+    "image": "/card-product.png",
+    "title": "Strudel de Manzana",
+    "description": "Masa crocante rellena de manzana y crema de vainilla.",
+    "price": 10,
+    "price_whole": null,
+    "category": "Postres y dulces adicionales"
+  },
+  {
+    "image": "/card-product.png",
+    "title": "Milhojas de Fresa",
+    "description": "Hojaldre con crema pastelera, Chantilly y fresa.",
+    "price": 10,
+    "price_whole": null,
+    "category": "Postres y dulces adicionales"
+  },
+  {
+    "image": "/card-product.png",
+    "title": "Milhojas de Mango",
+    "description": "Hojaldre con crema pastelera, Chantilly y mango.",
+    "price": 10,
+    "price_whole": null,
+    "category": "Postres y dulces adicionales"
+  },
+  {
+    "image": "/card-product.png",
+    "title": "Pionón",
+    "description": "Base de bizcocho suave y esponjoso enrollado, que abraza un exquisito relleno de crema pastelera y Chantilly.",
+    "price": 10,
+    "price_whole": null,
+    "category": "Postres y dulces adicionales"
+  },
+  {
+    "image": "/card-product.png",
+    "title": "Galletas Choco Chips de Maíz",
+    "description": "3 unidades por S/ 1.",
+    "price": 1,
+    "price_whole": null,
+    "category": "Postres y dulces adicionales"
+  },
+  {
+    "image": "/card-product.png",
+    "title": "Helado Artesanal de Lúcuma",
+    "description": "Helado artesanal con el auténtico sabor de la lúcuma.",
+    "price": 8,
+    "price_whole": null,
+    "category": "Helados Artesanales"
+  },
+  {
+    "image": "/card-product.png",
+    "title": "Helado Artesanal de Frutos del Bosque",
+    "description": "Helado con una mezcla deliciosa de frutos del bosque.",
+    "price": 8,
+    "price_whole": null,
+    "category": "Helados Artesanales"
+  },
+  {
+    "image": "/card-product.png",
+    "title": "Helado Artesanal de Coco",
+    "description": "Refrescante helado de coco, ideal para días calurosos.",
+    "price": 8,
+    "price_whole": null,
+    "category": "Helados Artesanales"
+  },
+  {
+    "image": "/card-product.png",
+    "title": "Helado Artesanal de Oreo",
+    "description": "Helado cremoso con trozos de galleta Oreo.",
+    "price": 8,
+    "price_whole": null,
+    "category": "Helados Artesanales"
+  },
+  {
+    "image": "/card-product.png",
+    "title": "Helado Artesanal de Pistacho Premium",
+    "description": "Helado premium con el inconfundible sabor del pistacho.",
+    "price": 10,
+    "price_whole": null,
+    "category": "Helados Artesanales"
+  },
+  {
+    "image": "/card-product.png",
+    "title": "Helado Artesanal de Vainilla",
+    "description": "Helado clásico de vainilla con un sabor suave y natural.",
+    "price": 8,
+    "price_whole": null,
+    "category": "Helados Artesanales"
+  },
+  {
+    "image": "/card-product.png",
+    "title": "Helado Artesanal de Fresa",
+    "description": "Helado artesanal con fresas naturales y un toque dulce.",
+    "price": 8,
+    "price_whole": null,
+    "category": "Helados Artesanales"
+  },
+  {
+    "image": "/card-product.png",
+    "title": "Helado Artesanal de Arándanos",
+    "description": "Helado de arándanos con un equilibrio perfecto entre dulce y ácido.",
+    "price": 8,
+    "price_whole": null,
+    "category": "Helados Artesanales"
+  },
+  {
+    "image": "/card-product.png",
+    "title": "Helado Artesanal de Chocolate",
+    "description": "Helado de chocolate intenso y cremoso.",
+    "price": 8,
+    "price_whole": null,
+    "category": "Helados Artesanales"
+  },
+  {
+    "image": "/card-product.png",
+    "title": "Helado Artesanal de Mango",
+    "description": "Helado tropical con el dulce y jugoso sabor del mango.",
+    "price": 8,
+    "price_whole": null,
+    "category": "Helados Artesanales"
+  },
+  {
+    "image": "/card-product.png",
+    "title": "Helado Artesanal de Ron con Pasas",
+    "description": "Helado con un toque de ron y pasas maceradas.",
+    "price": 8,
+    "price_whole": null,
+    "category": "Helados Artesanales"
+  },
+  {
+    "image": "/card-product.png",
+    "title": "Helado Artesanal de Cappuccino",
+    "description": "Helado con un delicioso sabor a cappuccino.",
+    "price": 8,
+    "price_whole": null,
+    "category": "Helados Artesanales"
+  },
+  {
+    "image": "/card-product.png",
+    "title": "Helado Artesanal de Cacao Orgánico",
+    "description": "Helado hecho con cacao orgánico de alta calidad.",
+    "price": 8,
+    "price_whole": null,
+    "category": "Helados Artesanales"
+  },
+  {
+    "image": "/card-product.png",
+    "title": "Helado Artesanal de Maracuyá (Vegano)",
+    "description": "Helado vegano de maracuyá, refrescante y sin ingredientes de origen animal.",
+    "price": 8,
+    "price_whole": null,
+    "category": "Helados Artesanales"
+  },
+  {
+    "image": "/card-product.png",
+    "title": "Helado Artesanal de Chocobrownie",
+    "description": "Helado de chocolate con trozos de brownie casero.",
+    "price": 8,
+    "price_whole": null,
+    "category": "Helados Artesanales"
+  },
+  {
+    "image": "/card-product.png",
+    "title": "Helado Artesanal de Plátano",
+    "description": "Helado de plátano con un sabor dulce y natural.",
+    "price": 8,
+    "price_whole": null,
+    "category": "Helados Artesanales"
+  },
+  {
+    "image": "/card-product.png",
+    "title": "Frappé Maju (Especialidad de la Casa)",
+    "description": "Café, manjar blanco y helado de vainilla.",
+    "price": 17,
+    "price_whole": null,
+    "category": "Frappés"
+  },
+  {
+    "image": "/frappe de chocolate.JPG",
+    "title": "Frappé de Chocolate",
+    "description": "Cacao, fudge y leche evaporada.",
+    "price": 15,
+    "price_whole": null,
+    "category": "Frappés"
+  },
+  {
     "image": "/card-product.png",
     "title": "Frappé de Fresa",
-    "description": "Fresas naturales, leche evaporada y jarabe de goma, con un toque especial de la casa.",
-    "price": 4.5,
-    "category": "Frappé"
+    "description": "Fresas naturales con leche evaporada.",
+    "price": 15,
+    "price_whole": null,
+    "category": "Frappés"
   },
   {
-    "image": "/card-product.png",
-    "title": "Frappé de Chocolate",
-    "description": "Cacao, fudge y leche evaporada, combinados con ingredientes secretos para realzar el sabor.",
-    "price": 4.8,
-    "category": "Frappé"
-  },
-  {
-    "image": "/card-product.png",
+    "image": "/frappe moccha.JPG",
     "title": "Frappé de Moca",
-    "description": "Espresso, fudge y leche evaporada, con un balance único de dulzura y café.",
-    "price": 4.7,
-    "category": "Frappé"
+    "description": "Espresso, fudge y leche evaporada.",
+    "price": 15,
+    "price_whole": null,
+    "category": "Frappés"
   },
   {
     "image": "/card-product.png",
     "title": "Frappé de Lúcuma",
-    "description": "Lúcuma, leche evaporada y un toque de canela, con un ingrediente especial que potencia su cremosidad.",
-    "price": 5.0,
-    "category": "Frappé"
-  },
-  {
-    "image": "/card-product.png",
-    "title": "Frappé Maju",
-    "description": "Café, manjar blanco y helado de vainilla, con un secreto dulce de la casa.",
-    "price": 5.5,
-    "category": "Frappé"
+    "description": "Lúcuma, leche evaporada y un toque de canela.",
+    "price": 15,
+    "price_whole": null,
+    "category": "Frappés"
   },
   {
     "image": "/card-product.png",
     "title": "Frappé de Algarrobina",
-    "description": "Algarrobina, leche evaporada y canela, con un giro especial de nuestra receta exclusiva.",
-    "price": 4.9,
-    "category": "Frappé"
+    "description": "Algarrobina, leche evaporada y canela.",
+    "price": 15,
+    "price_whole": null,
+    "category": "Frappés"
   },
   {
-    "image": "/card-product.png",
+    "image": "/frappe de caramelo.jpg",
     "title": "Frappé de Caramelo",
-    "description": "Caramelo, manjar blanco y leche evaporada, con un toque secreto para un sabor más intenso.",
-    "price": 4.6,
-    "category": "Frappé"
+    "description": "Caramelo, manjar blanco y leche evaporada.",
+    "price": 15,
+    "price_whole": null,
+    "category": "Frappés"
   },
   {
     "image": "/card-product.png",
     "title": "Frappé de Oreo",
-    "description": "Galletas Oreo, leche evaporada y leche condensada, con una textura especial gracias a nuestra receta única.",
-    "price": 4.7,
-    "category": "Frappé"
+    "description": "Galletas Oreo, leche evaporada y leche condensada.",
+    "price": 15,
+    "price_whole": null,
+    "category": "Frappés"
   },
   {
     "image": "/card-product.png",
     "title": "Frappé de Maracuyá",
-    "description": "Pulpa de maracuyá, leche evaporada y jarabe de goma, con un toque secreto para equilibrar la acidez.",
-    "price": 4.4,
-    "category": "Frappé"
+    "description": "Pulpa de maracuyá, leche evaporada y jarabe de goma.",
+    "price": 15,
+    "price_whole": null,
+    "category": "Frappés"
   },
   {
     "image": "/card-product.png",
     "title": "Frappé de Mango",
-    "description": "Mango natural, leche evaporada y jarabe de goma, con un ingrediente especial que resalta su frescura.",
-    "price": 4.5,
-    "category": "Frappé"
+    "description": "Mango natural, leche evaporada y jarabe de goma.",
+    "price": 15,
+    "price_whole": null,
+    "category": "Frappés"
   },
   {
     "image": "/card-product.png",
-    "title": "Americano",
+    "title": "Croissant de Pollo",
+    "description": "Delicioso croissant relleno de pollo.",
+    "price": 10,
+    "price_whole": null,
+    "category": "Salados"
+  },
+  {
+    "image": "/card-product.png",
+    "title": "Empanada de Pollo",
+    "description": "Empanada horneada con un relleno de pollo sazonado.",
+    "price": 10,
+    "price_whole": null,
+    "category": "Salados"
+  },
+  {
+    "image": "/card-product.png",
+    "title": "Quiche de Acelga",
+    "description": "Tarta salada con acelga y queso en una base de masa crocante.",
+    "price": 10,
+    "price_whole": null,
+    "category": "Salados"
+  },
+  {
+    "image": "/card-product.png",
+    "title": "Quiche de Brócoli",
+    "description": "Tarta salada con brócoli y queso en una base de masa crocante.",
+    "price": 10,
+    "price_whole": null,
+    "category": "Salados"
+  },
+  {
+    "image": "/card-product.png",
+    "title": "Quiche de Carne",
+    "description": "Tarta salada con carne sazonada en una base de masa crocante.",
+    "price": 10,
+    "price_whole": null,
+    "category": "Salados"
+  },
+  {
+    "image": "/card-product.png",
+    "title": "Café Americano",
     "description": "Espresso doble con agua caliente, preparado con nuestro toque especial.",
-    "price": 3.0,
-    "category": "Café"
+    "price": 7,
+    "price_whole": null,
+    "category": "Cafés y Bebidas Calientes"
   },
   {
     "image": "/card-product.png",
-    "title": "Espresso",
-    "description": "Café concentrado en versión simple o doble, con una selección especial de granos.",
-    "price": 2.5,
-    "category": "Café"
+    "title": "Espresso (simple)",
+    "description": "Café concentrado en versión simple, con una selección especial de granos.",
+    "price": 6,
+    "price_whole": null,
+    "category": "Cafés y Bebidas Calientes"
+  },
+  {
+    "image": "/card-product.png",
+    "title": "Espresso (doble)",
+    "description": "Café concentrado en versión doble, con una selección especial de granos.",
+    "price": 8,
+    "price_whole": null,
+    "category": "Cafés y Bebidas Calientes"
   },
   {
     "image": "/card-product.png",
     "title": "Latte",
     "description": "Espresso doble con leche vaporizada, con un secreto que realza su suavidad.",
-    "price": 3.5,
-    "category": "Café"
+    "price": 8,
+    "price_whole": null,
+    "category": "Cafés y Bebidas Calientes"
   },
   {
     "image": "/card-product.png",
     "title": "Cappuccino",
     "description": "Espresso con leche espumada, con un balance perfecto de cremosidad y aroma.",
-    "price": 3.8,
-    "category": "Café"
+    "price": 8,
+    "price_whole": null,
+    "category": "Cafés y Bebidas Calientes"
   },
   {
-    "image": "/card-product.png",
+    "image": "/orange_coffee.JPG",
     "title": "Orange Coffee",
-    "description": "Espresso con jugo de naranja y hielo, con un toque especial para potenciar su frescura.",
-    "price": 4.2,
-    "category": "Especialidad"
+    "description": "Espresso con jugo de naranja e hielo, con un toque especial para potenciar su frescura.",
+    "price": 10,
+    "price_whole": null,
+    "category": "Cafés y Bebidas Calientes"
   },
   {
     "image": "/card-product.png",
-    "title": "Julia’s Coffee",
+    "title": "Julia’s Coffee (Especialidad de la Casa)",
     "description": "Espresso, maracuyá y ginger ale, con un secreto de la casa que lo hace único.",
-    "price": 5.0,
-    "category": "Especialidad"
+    "price": 12,
+    "price_whole": null,
+    "category": "Cafés y Bebidas Calientes"
   },
   {
     "image": "/card-product.png",
-    "title": "Maggie’s Little London",
+    "title": "Maggie’s Little London (Especialidad de la Casa)",
     "description": "Espresso, flor de Jamaica y jugo de naranja, con un ingrediente especial que lo diferencia.",
-    "price": 4.8,
-    "category": "Especialidad"
+    "price": 10,
+    "price_whole": null,
+    "category": "Cafés y Bebidas Calientes"
+  },
+  {
+    "image": "/london_coffee.jpg",
+    "title": "London Coffee (Especialidad de la Casa)",
+    "description": "Café con Baileys y leche batida fría, con un toque secreto que le da un sabor inigualable.",
+    "price": 10,
+    "price_whole": null,
+    "category": "Cafés y Bebidas Calientes"
   },
   {
     "image": "/card-product.png",
-    "title": "London Coffee",
-    "description": "Café con Baileys y leche batida fría, con un toque secreto que le da un sabor inigualable.",
-    "price": 5.5,
-    "category": "Especialidad"
+    "title": "Jugo Simple",
+    "description": "Jugo natural de una sola fruta.",
+    "price": 10,
+    "price_whole": null,
+    "category": "Jugos y Bebidas Frías"
+  },
+  {
+    "image": "/card-product.png",
+    "title": "Jugo Mezclado",
+    "description": "Combinación de frutas frescas. Ejemplos: Papaya con Piña, Fresa con Papaya, Surtido.",
+    "price": 12,
+    "price_whole": null,
+    "category": "Jugos y Bebidas Frías"
+  },
+  {
+    "image": "/card-product.png",
+    "title": "Adicional - Jugo con Leche",
+    "description": "Se adiciona S/ 2 al precio del jugo. Tipos de leche: Leche de vaca, Leche vegetal (bajo o alto en azúcar).",
+    "price": 2,
+    "price_whole": null,
+    "category": "Jugos y Bebidas Frías"
+  },
+  {
+    "image": "/card-product.png",
+    "title": "Chicha Morada de la Casa",
+    "description": "Refrescante chicha morada preparada con nuestra receta especial.",
+    "price": 10,
+    "price_whole": null,
+    "category": "Jugos y Bebidas Frías"
+  },
+  {
+    "image": "/card-product.png",
+    "title": "Limonada Frozzen",
+    "description": "Limonada granizada para refrescarte en cualquier momento.",
+    "price": 10,
+    "price_whole": null,
+    "category": "Jugos y Bebidas Frías"
+  },
+  {
+    "image": "/card-product.png",
+    "title": "Limonada",
+    "description": "Clásica limonada natural, perfecta para acompañar cualquier comida.",
+    "price": 10,
+    "price_whole": null,
+    "category": "Jugos y Bebidas Frías"
+  },
+  {
+    "image": "/card-product.png",
+    "title": "Infusiones Variadas",
+    "description": "Infusiones naturales como Té de Naranja, Té de Durazno, Té Verde, entre otros.",
+    "price": 4,
+    "price_whole": null,
+    "category": "Infusiones"
+  },
+  {
+    "image": "/card-product.png",
+    "title": "Keke Fusionado",
+    "description": "Keke con una combinación de sabores: Naranja, Inglés, Limón y Manzana.",
+    "price": 6,
+    "price_whole": null,
+    "category": "Galletas y Keke"
+  },
+  {
+    "image": "/card-product.png",
+    "title": "Gaseosa",
+    "description": "Refresco carbonatado en presentación individual.",
+    "price": 4,
+    "price_whole": null,
+    "category": "Otras Bebidas"
+  },
+  {
+    "image": "/card-product.png",
+    "title": "Agua Mineral",
+    "description": "Agua mineral embotellada.",
+    "price": 3,
+    "price_whole": null,
+    "category": "Otras Bebidas"
+  },
+  {
+    "image": "/card-product.png",
+    "title": "Aperol",
+    "description": "Refrescante bebida Aperol, ideal para cualquier ocasión.",
+    "price": 15,
+    "price_whole": null,
+    "category": "Otras Bebidas"
   }
 ]

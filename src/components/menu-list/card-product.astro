@@ -1,5 +1,5 @@
   ---
-  const { image, title, description, price } = Astro.props;
+  const { image, title, description, price, price_whole } = Astro.props;
   ---
 
   <head>
@@ -12,9 +12,15 @@
     <div class="card-content">
       <div class="title-price">
         <h3 class="title">{title}</h3>
-        <p class="price">S/ {price.toFixed(2)}</p>
       </div>
       <p class="description">{description}</p>
+      <div class="prices-container">
+        <p class="price">Unidad: S/{price.toFixed(2)}</p>
+              {price_whole !== null && price_whole !== undefined && (
+                <p class="price-whole">Completa: S/ {price_whole.toFixed(2)}</p>
+              )}
+      </div>
+      
     </div>
   </div>
 
@@ -56,28 +62,30 @@
 .title-price {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   font-family: 'Waterfall', cursive;
   min-height: 70px;
   margin-bottom: 0.5rem;
+  padding: 0 5%;
 }
 
 .title {
-  font-size: 38px;
+  font-size: 500;
   color: #5e3023;
   margin: 0;
   font-weight: bold;
-  flex-grow: 1;
+  flex-grow: 2;
   display: flex;
-  align-items: center;
+  align-items: left;
 }
 
-.price {
-  font-size: 24px;
+.price, .price-whole {
+  font-size: 20px;
   font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
+  font-weight: 550;
   color: #5e3023;
   margin: 0;
+  padding: 0 5%;
 }
 
 .description {
@@ -89,9 +97,12 @@
   text-align: left;
   margin-top: 0;
   flex-grow: 1;
-  display: block;
+  display: flex;
   word-wrap: break-word;
   overflow: hidden;
+  padding-left:0;
+  padding-right:0;
+  align-items: center;
 }
 
 .card:hover {

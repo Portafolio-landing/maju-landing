@@ -7,28 +7,58 @@ import "./CarouselProductos.css";
 
 const productos = [
   {
-    imagen: "/dest1.JPG",
-    name: "Tarta de Chocolate",
+    imagen: "/la_irlandesa.JPG",
+    name: "Torta Irlandesa (Premium)",
     price: "S/ 15.00",
-    description: "Deliciosa tarta de chocolate con cobertura de cacao puro y almendras caramelizadas."
+    description: "Queque de chocolate con café alemán y whisky Johnnie Walker etiqueta roja."
   },
   {
-    imagen: "/dest2.JPG",
-    name: "Croissant de Almendra",
+    imagen: "/torta_hindu.JPG",
+    name: "Torta Indú (Hindú) (Premium)",
     price: "S/ 10.50",
-    description: "Hojaldre crujiente relleno de crema de almendra con un toque de azúcar glas."
+    description: "Torta de zanahoria con pecanas y manjar blanco."
   },
   {
-    imagen: "/dest3.JPG",
-    name: "Pastel de Fresas",
+    imagen: "/tres_leches_de_vainilla.JPG",
+    name: "Torta Tres Leches (Chocolate)",
     price: "S/ 18.00",
-    description: "Esponjoso bizcocho de vainilla con fresas frescas y crema batida."
+    description: "Bizcocho en tres leches, versión chocolate."
   },
   {
-    imagen: "/dest4.JPG",
-    name: "Macarons Franceses",
+    imagen: "/torta_de_almendra.JPG",
+    name: "Torta de Almendras (Premium)",
     price: "S/ 12.00",
-    description: "Coloridos y crujientes macarons con rellenos de frambuesa, pistacho y chocolate."
+    description: "Queque de vainilla con almendras tostadas y manjar blanco."
+  },
+  {
+    imagen: "/torta_de_platano.JPG",
+    name: "Torta de Plátano",
+    price: "S/ 12.00",
+    description: "Queque de plátano con choco chips y Chantilly."
+  },
+  {
+    imagen: "/pie_de_limon.JPG",
+    name: "Torta Francesa de Limón",
+    price: "S/ 12.00",
+    description: "Cheesecake con queso Philadelphia y limón."
+  },
+  {
+    imagen: "/chocolate_humedo_torta_chocolate.JPG",
+    name: "Torta de Chocolate Húmedo",
+    price: "S/ 12.00",
+    description: "Queque de chocolate con fudge puro y capas de fudge."
+  },
+  {
+    imagen: "/delicia_de_pera.JPG",
+    name: "Delicia de Pera",
+    price: "S/ 12.00",
+    description: "Queque denso de vainilla con crema pastelera y peras."
+  },
+  {
+    imagen: "/cheesecake_fresa.JPG",
+    name: "Maggie’s Cheese Cake (Premium)",
+    price: "S/ 12.00",
+    description: "Cheesecake elaborado con quark, queso Philadelphia y base de galleta de vainilla."
   },
 ];
 
