@@ -109,7 +109,6 @@ const { id } = Astro.props;
 </script>
 
 <style>
-  /* Los estilos se mantienen igual */
   .language-switcher {
     position: relative;
     display: inline-block;
@@ -122,7 +121,7 @@ const { id } = Astro.props;
     background: white;
     border: none;
     padding: 10px 15px;
-    font-size: 28px;
+    font-size: clamp(24px, 2vw, 28px);
     font-weight: 400;
     font-family: 'Montserrat', sans-serif;
     color: #5E3023;
@@ -132,13 +131,13 @@ const { id } = Astro.props;
   }
 
   .flag-icon {
-    width: 30px;
+    width: clamp(26px, 3vw, 30px);
     height: auto;
   }
 
   .arrow-icon {
-    width: 30px;
-    height: 30px;
+    width: clamp(26px, 3vw, 30px);
+    height: auto;
     stroke: #5E3023;
   }
 
@@ -149,9 +148,10 @@ const { id } = Astro.props;
     border-radius: 18px;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
     list-style: none;
-    width: 221px;
+    width: clamp(150px, 15vw, 190px);
     top: 100%; 
-    left: -50px;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 100;
     padding: 0; 
     overflow: hidden;
@@ -169,30 +169,12 @@ const { id } = Astro.props;
     justify-content: center;
     text-decoration: none;
     color: #5E3023;
-    font-size: 28px;
+    font-size: clamp(24px, 2vw, 28px);
     font-family: 'Montserrat', sans-serif;
     transition: background 0.3s ease;
   }
 
   .lang-option:hover {
     background: rgba(137, 87, 55, 0.15);
-  }
-
-  @media (min-width: 1024px) and (max-width: 1479px) { 
-    .language-switcher {
-      transform: scale(0.9); 
-    }
-  }
-
-  @media (min-width: 768px) and (max-width: 1023px) { 
-    .language-switcher {
-      transform: scale(0.8);
-    }
-  }
-
-  @media (min-width: 360px) and (max-width: 767px) { 
-    .language-switcher {
-      transform: scale(0.7); 
-    }
   }
 </style>

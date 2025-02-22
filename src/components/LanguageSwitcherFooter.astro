@@ -2,12 +2,16 @@
 const languages = [
   { code: "es", name: "ESP", flag: "/pe.svg" },
   { code: "de", name: "GER", flag: "/de.svg" },
-  { code: "en", name: "ENG", flag: "/gb.svg" }
+  { code: "en", name: "ENG", flag: "/gb.svg" },
 ];
 
 const url = new URL(Astro.request.url);
 const currentPath = url.pathname;
-const currentLang = currentPath.startsWith("/en") ? "en" : currentPath.startsWith("/de") ? "de" : "es";
+const currentLang = currentPath.startsWith("/en")
+  ? "en"
+  : currentPath.startsWith("/de")
+    ? "de"
+    : "es";
 
 interface Props {
   id?: string;
@@ -17,29 +21,56 @@ const { id = "footer-lang-switcher" } = Astro.props;
 ---
 
 <div class={`footer-lang-container ${id}`}>
-  <button class="footer-lang-btn" id="footer-lang-toggle" aria-haspopup="true" aria-expanded="false">
-    <img class="footer-flag-icon" src={languages.find(lang => lang.code === currentLang)?.flag} alt={currentLang}>
-    <span class="footer-lang-text">{languages.find(lang => lang.code === currentLang)?.name}</span>
-    <svg class="footer-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6"></path>
+  <button
+    class="footer-lang-btn"
+    id="footer-lang-toggle"
+    aria-haspopup="true"
+    aria-expanded="false"
+  >
+    <img
+      class="footer-flag-icon"
+      src={languages.find((lang) => lang.code === currentLang)?.flag}
+      alt={currentLang}
+    />
+    <span class="footer-lang-text"
+      >{languages.find((lang) => lang.code === currentLang)?.name}</span
+    >
+    <svg
+      class="footer-arrow-icon"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M6 9l6 6 6-6"></path>
     </svg>
   </button>
 
   <ul class="footer-lang-dropdown" id="footer-lang-dropdown">
-    {languages.map((lang) => (
-      <li>
-        <a href={lang.code === "es" ? "/" : `/${lang.code}/`} class="footer-lang-option">
-          <img src={lang.flag} alt={lang.name} class="footer-flag-icon">
-          <span>{lang.name}</span>
-        </a>
-      </li>
-    ))}
+    {
+      languages.map((lang) => (
+        <li>
+          <a
+            href={lang.code === "es" ? "/" : `/${lang.code}/`}
+            class="footer-lang-option"
+          >
+            <img src={lang.flag} alt={lang.name} class="footer-flag-icon" />
+            <span>{lang.name}</span>
+          </a>
+        </li>
+      ))
+    }
   </ul>
 </div>
 
 <script is:inline>
   document.addEventListener("DOMContentLoaded", () => {
-    const footerLangContainer = document.querySelector('.footer-lang-container');
+    const footerLangContainer = document.querySelector(
+      ".footer-lang-container"
+    );
     if (!footerLangContainer) return;
 
     const footerLangToggle = document.getElementById("footer-lang-toggle");
@@ -52,19 +83,28 @@ const { id = "footer-lang-switcher" } = Astro.props;
       const isLangOpen = footerLangDropdown.classList.contains("open");
 
       // Cerrar otros dropdowns antes de abrir este
-      document.querySelectorAll('.footer-lang-dropdown').forEach(dropdown => {
+      document.querySelectorAll(".footer-lang-dropdown").forEach((dropdown) => {
         if (dropdown !== footerLangDropdown) {
           dropdown.classList.remove("open");
-          dropdown.previousElementSibling.setAttribute("aria-expanded", "false");
+          dropdown.previousElementSibling.setAttribute(
+            "aria-expanded",
+            "false"
+          );
         }
       });
 
       footerLangDropdown.classList.toggle("open", !isLangOpen);
-      footerLangToggle.setAttribute("aria-expanded", footerLangDropdown.classList.contains("open"));
+      footerLangToggle.setAttribute(
+        "aria-expanded",
+        footerLangDropdown.classList.contains("open")
+      );
     });
 
     document.addEventListener("click", (event) => {
-      if (!footerLangToggle.contains(event.target) && !footerLangDropdown.contains(event.target)) {
+      if (
+        !footerLangToggle.contains(event.target) &&
+        !footerLangDropdown.contains(event.target)
+      ) {
         footerLangDropdown.classList.remove("open");
         footerLangToggle.setAttribute("aria-expanded", "false");
       }
@@ -76,17 +116,19 @@ const { id = "footer-lang-switcher" } = Astro.props;
     });
 
     const url = new URL(window.location.href);
-    const firstPathSegment = url.pathname.split('/')[1];
-    const currentLang = ["en", "de"].includes(firstPathSegment) ? firstPathSegment : "es";
+    const firstPathSegment = url.pathname.split("/")[1];
+    const currentLang = ["en", "de"].includes(firstPathSegment)
+      ? firstPathSegment
+      : "es";
 
     const langData = {
       es: { name: "ESP", flag: "/pe.svg" },
       en: { name: "ENG", flag: "/gb.svg" },
-      de: { name: "GER", flag: "/de.svg" }
+      de: { name: "GER", flag: "/de.svg" },
     };
 
-    const footerFlagIcon = document.querySelector('.footer-flag-icon');
-    const footerLangText = document.querySelector('.footer-lang-text');
+    const footerFlagIcon = document.querySelector(".footer-flag-icon");
+    const footerLangText = document.querySelector(".footer-lang-text");
 
     if (footerFlagIcon && footerLangText) {
       footerFlagIcon.src = langData[currentLang].flag;
@@ -96,50 +138,49 @@ const { id = "footer-lang-switcher" } = Astro.props;
 </script>
 
 <style>
-    .footer {
-        position: relative;
-        overflow: visible;
-    }
+  .footer {
+    position: relative;
+    overflow: visible;
+  }
 
-    .footer-lang-container {
-        position: relative;
-        display: inline-block;
-        overflow: visible; 
-        margin-right: 20px;
-        z-index: 200;
-    }
+  .footer-lang-container {
+    position: relative;
+    display: inline-block;
+    overflow: visible;
+    margin-right: 20px;
+    z-index: 200;
+  }
 
-    /* ✅ Botón de idioma */
-    .footer-lang-btn {
+  .footer-lang-btn {
     display: flex;
     align-items: center;
-    gap: 8px; 
+    gap: 8px;
     background: white;
     border: none;
-    padding: 10px 15px; 
-    font-size: 18px; 
+    padding: 10px 15px;
+    font-size: 18px;
     font-weight: 400;
-    font-family: 'Montserrat', sans-serif;
-    color: #5E3023;
+    font-family: "Montserrat", sans-serif;
+    color: #5e3023;
     border-radius: 20px;
     cursor: pointer;
     transition: background 0.3s ease;
-    }
+  }
 
-    .footer-flag-icon {
+  .footer-flag-icon {
     width: 24px;
     height: auto;
-    max-width: 24px; 
-    }
+    max-width: 24px;
+  }
 
-    .footer-arrow-icon {
+  .footer-arrow-icon {
     width: 24px;
     height: 24px;
-    stroke: #5E3023;
-    }
+    stroke: #5e3023;
+  }
 
-    /* ✅ Dropdown */
-    .footer-lang-dropdown {
+  /* ✅ Dropdown */
+  .footer-lang-dropdown {
     display: none;
     position: absolute;
     background: white;
@@ -155,88 +196,87 @@ const { id = "footer-lang-switcher" } = Astro.props;
     padding: 5px 0;
     overflow: hidden;
     padding: 0;
-    margin: 0; 
-    }
+    margin: 0;
+  }
 
-    .footer-lang-dropdown.open {
+  .footer-lang-dropdown.open {
     display: block;
-    }
+  }
 
-    .footer-lang-option {
+  .footer-lang-option {
     display: flex;
     align-items: center;
-    gap: 10px; 
+    gap: 10px;
     padding: 8px 10px;
     justify-content: center;
     text-decoration: none;
-    color: #5E3023;
+    color: #5e3023;
     font-size: 20px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     transition: background 0.3s ease;
     margin: 0;
-    }
+  }
 
-    .footer-lang-option:hover {
+  .footer-lang-option:hover {
     background: rgba(137, 87, 55, 0.15);
+  }
+
+  @media (max-width: 768px) {
+    .footer-lang-btn {
+      font-size: 20px;
+      padding: 6px 10px;
     }
 
-    @media (max-width: 768px) {
-        
-        .footer-lang-btn {
-            font-size: 20px;
-            padding: 6px 10px;
-        }
-
-        .footer-flag-icon {
-            width: 20px;
-            max-width: 20px;
-        }
-
-        .footer-arrow-icon {
-            width: 20px;
-            height: 20px;
-        }
-
-        .footer-lang-dropdown {
-            width: 120px;
-        }
-
-        .footer-lang-option {
-            font-size: 18px;
-            padding: 8px;
-        }
+    .footer-flag-icon {
+      width: 20px;
+      max-width: 20px;
     }
 
-    @media (max-width: 480px) {
-        .footer-lang-btn {
-            font-size: 18px;
-            padding: 5px 8px;
-        }
-
-        .footer-flag-icon {
-            width: 18px;
-            max-width: 18px;
-        }
-
-        .footer-arrow-icon {
-            width: 18px;
-            height: 18px;
-        }
-
-        .footer-lang-dropdown {
-            width: 120px;
-        }
-
-        .footer-lang-option {
-            font-size: 16px;
-            padding: 6px;
-        }
+    .footer-arrow-icon {
+      width: 20px;
+      height: 20px;
     }
+
+    .footer-lang-dropdown {
+      width: 120px;
+    }
+
+    .footer-lang-option {
+      font-size: 18px;
+      padding: 8px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .footer-lang-btn {
+      font-size: 18px;
+      padding: 5px 8px;
+    }
+
+    .footer-flag-icon {
+      width: 18px;
+      max-width: 18px;
+    }
+
+    .footer-arrow-icon {
+      width: 18px;
+      height: 18px;
+    }
+
+    .footer-lang-dropdown {
+      width: 120px;
+    }
+
+    .footer-lang-option {
+      font-size: 16px;
+      padding: 6px;
+    }
+  }
 
   @media (max-width: 360px) {
-          .footer-lang-container {
-            padding-bottom: 10px;
-            margin-right: 0;
-          }
-      }
+    .footer-lang-container {
+      padding-bottom: 10px;
+      margin-right: 0;
+    }
+  }
 </style>
