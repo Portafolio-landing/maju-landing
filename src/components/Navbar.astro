@@ -1,5 +1,5 @@
 ---
-import LanguageSwitcher from "./LanguageSwitcher.astro";
+import LanguageSwitcher from "./LanguageSwitcherNavbar.astro";
 
 const { lang } = Astro.props as { lang: "es" | "en" | "de" };
 
@@ -84,7 +84,6 @@ const menuItems = {
   
 
 <style>
-/* Estilos Generales */
 .navbar {
   background: white;
   width: 100%;
@@ -94,20 +93,20 @@ const menuItems = {
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   padding: 10px 20px;
   z-index: 1000;
+  box-sizing: border-box;
 }
 
 .navbar-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
   margin: 0 auto;
 }
 
 /* Logo */
 .logo {
-  font-family: 'Rouge Script', cursive;
-  font-size: 70px;
+  font-family: 'Rouge Script', sans-serif;
+  font-size: clamp(50px, 5vw, 70px);
   font-weight: 400px;
   color: #5E3023;
   text-decoration: none;
@@ -115,36 +114,26 @@ const menuItems = {
   line-height: 1;
 }
 
-@media (max-width: 768px) {
-  .logo {
-    font-size: 54px;
-  }
-}
-
-@media (max-width: 480px) {
-  .logo {
-    font-size: 40px;
-  }
-}
-
 /* Menú Desktop */
 .nav-links {
   display: flex;
-  gap: 55px;
+  gap: clamp(5px, 5vw, 15px);
   list-style: none;
   font-family: 'Montserrat', sans-serif;
+  padding: 10px 0;
 }
 
 .nav-links li {
   position: relative;
+  margin: 3px 0;
 }
 
 .nav-links li a {
   text-decoration: none;
   color: #5E3023;
-  font-size: 22px;
+  font-size: clamp(18px, 2vw, 22px);
   font-weight: 500;
-  padding: 5px 10px;
+  padding: 8px 5px;
   transition: color 0.3s ease;
   position: relative;
 }
@@ -169,7 +158,6 @@ const menuItems = {
 
 /* Menú móvil */
 .hamburger {
-  display: none;
   font-size: 32px;
   background: none;
   border: none;
@@ -180,8 +168,10 @@ const menuItems = {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
   z-index: 1500; 
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .hamburger svg {
@@ -190,67 +180,12 @@ const menuItems = {
   stroke-width: 2.5;
 }
 
-@media (min-width: 1024px) and (max-width: 1169px) {
-  .nav-links li a {
-    font-size: 20px;
-  }
-}
-
-/* Ocultar la hamburguesa en pantallas grandes */
-@media (min-width: 1001px) {
-  .hamburger {
-    display: none !important;
-  }
-
-  .nav-links {
-    display: flex !important;
-    position: static !important;
-    width: auto !important;
-    background: none !important;
-    box-shadow: none !important;
-    flex-direction: row !important;
-    padding: 0 !important;
-    text-align: left !important;
-  }
-}
-
-@media (min-width: 360px) and (max-width: 767px) {
-  .nav-links {
-    left: -5%;
-  }
-}
-
-@media (min-width: 768px) {
-  .nav-links {
-    left: -3%;
-  }
-}
-
-
-@media (max-width: 768px) {
-  .nav-links {
-    padding: 10px 0; /* ✅ Reduce el padding total */
-    gap: 5px; /* ✅ Reduce la separación entre elementos */
-  }
-
-  .nav-links li {
-    margin: 3px 0; /* ✅ Disminuye el espacio entre los elementos */
-  }
-
-  .nav-links li a {
-    font-size: 18px; /* ✅ Texto más compacto */
-    padding: 8px 5px; /* ✅ Menos espacio alrededor del texto */
-  }
-}
-
-@media (min-width: 360px) and (max-width: 1023px) {
-  .hamburger {
-    margin-left: 50px;
-  }
-}
-
 /* Estilo del menú móvil */
 @media (max-width: 1000px) {
+  .navbar {
+    padding: 10px 0 10px 20px;
+  }
+
   .hamburger {
     display: flex !important;
     justify-content: center;
@@ -275,6 +210,7 @@ const menuItems = {
     padding: 20px 0;
     text-align: center;
     z-index: 1000;
+
   }
 
   /* Mostrar menú desplegado cuando esté activo */
@@ -282,8 +218,27 @@ const menuItems = {
     display: flex !important;
     visibility: visible !important;
     opacity: 1 !important;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 
+/* Ocultar la hamburguesa en pantallas grandes */
+@media (min-width: 1001px) {
+  .hamburger {
+    display: none !important;
+  }
 
+  .nav-links {
+    display: flex !important;
+    position: static !important;
+    width: auto !important;
+    background: none !important;
+    box-shadow: none !important;
+    flex-direction: row !important;
+    padding: 0 !important;
+    text-align: left !important;
+  }
+}
 </style>
