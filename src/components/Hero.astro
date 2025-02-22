@@ -41,12 +41,11 @@
     background-image: url("Hero.jpeg");
     background-size: cover;
     background-position: center;
-    height: 600px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding-left: 5%;
-    position: relative;
+    padding: 5%;
+    text-align: relative;
   }
 
   .hero-overlay {
@@ -60,33 +59,32 @@
 
   .hero-content {
     position: relative;
-    max-width: 600px;
+    max-width: 80%;
     background: rgba(243, 233, 220, 0.95);
-    padding: 50px 40px;
+    padding: 5%;
     border-radius: 10px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .hero-text h1 {
+    font-family: "Waterfall", sans-serif;
+    font-size: clamp(40px, 8vw, 80px);
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 15px;
   }
 
   .hero-text h2 {
     font-family: "Montserrat", sans-serif;
     font-weight: bold;
     color: #ab6325;
-    font-size: 18px;
-  }
-
-  .hero-text h1 {
-    font-family: "Waterfall", sans-serif;
-    color: #000000;
-    font-size: 80px;
-    font-weight: normal;
-    margin-top: 0;
-    margin-bottom: 15px;
+    font-size: clamp(14px, 2vw, 18px);
   }
 
   .hero-text p {
     font-family: "Montserrat", sans-serif;
     color: #5e3023;
-    font-size: 18px;
+    font-size: clamp(14px, 2vw, 18px);
     margin-bottom: 20px;
   }
 
@@ -95,10 +93,10 @@
     text-decoration: none;
     background: #5e3023;
     color: #ffffff;
-    padding: 12px 20px; /* Ajuste para pantallas pequeñas */
+    padding: 1em 2em;
     font-family: "Montserrat", sans-serif;
     font-weight: bold;
-    font-size: 14px;
+    font-size: clamp(14px, 2vw, 18px);
     border-radius: 10px;
     border: none;
     flex-shrink: 0;
@@ -113,67 +111,25 @@
 
   .quality-section {
     background: #f3e9dc;
-    padding: 50px 20px;
+    padding: 1% 5%;
     text-align: center;
   }
 
   .quality-content p {
     font-family: "Waterfall", sans-serif;
-    font-size: 90px;
+    font-size: clamp(40px, 8vw, 90px);
     color: #5e3023;
-    width: 80%;
-    margin: 0 auto;
   }
 
-/* Media query para celulares con ancho de 360px */
-@media (min-width: 360px) and (max-width: 767px) {
-  .hero {
-    height: 400px;
+  @media (min-width: 768px) {
+    .hero-content {
+      max-width: 60%;
+    }
   }
 
-  .hero-content {
-    position: relative;
-    max-width: 240px;
-    padding: 20px 40px;
+  @media (min-width: 1200px) {
+    .hero-content {
+      max-width: 40%;
+    }
   }
-
-  .hero-text h2 {
-    font-size: 14px;
-  }
-
-  .hero-text h1 {
-    font-size: 50px;
-  }
-
-  .hero-text p {
-    font-size: 14px;
-  }
-
-  .quality-section {
-    padding: 20px 10px;
-  }
-
-  .quality-content p {
-    font-size: 50px;
-  }
-}
-
-/* Media query para pantallas medianas */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .quality-section {
-    padding: 30px 10px;
-  }
-
-  .quality-content p {
-    font-size: 70px;
-  }
-}
-
-/* Media query para pantallas grandes */
-@media (min-width: 1024px) and (max-width: 1479px) {
-  .menu-button {
-    padding: 20px 30px;
-    font-size: 18px;
-  }
-}
 </style>
