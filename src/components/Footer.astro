@@ -8,20 +8,20 @@ const menuItems = {
     { name: "Inicio", link: "/" },
     { name: "Sobre nosotros", link: "/about" },
     { name: "Menú", link: "/menu" },
-    { name: "Contacto", link: "/contact" }
+    { name: "Contacto", link: "/contact" },
   ],
   en: [
     { name: "Home", link: "/en/" },
     { name: "About Us", link: "/en/about" },
     { name: "Menu", link: "/en/menu" },
-    { name: "Contact", link: "/en/contact" }
+    { name: "Contact", link: "/en/contact" },
   ],
   de: [
     { name: "Startseite", link: "/de/" },
     { name: "Über uns", link: "/de/about" },
     { name: "Menü", link: "/de/menu" },
-    { name: "Kontakt", link: "/de/contact" }
-  ]
+    { name: "Kontakt", link: "/de/contact" },
+  ],
 };
 ---
 
@@ -32,28 +32,36 @@ const menuItems = {
 
     <!-- Menú con enlaces funcionales -->
     <ul class="footer-menu">
-      {menuItems[lang].map((item) => (
-        <li><a href={item.link}>{item.name}</a></li>
-      ))}
+      {
+        menuItems[lang].map((item) => (
+          <li>
+            <a href={item.link}>{item.name}</a>
+          </li>
+        ))
+      }
     </ul>
 
     <!-- Información de contacto en dos columnas -->
     <div class="footer-info">
       <div class="contact-column">
-        <p><strong>Llámanos</strong><br />
+        <p>
+          <strong>Llámanos</strong><br />
           <a href="tel:+51995439092" class="phone-link">+51 995 439 092</a>
         </p>
       </div>
       <div class="contact-column">
-        <p><strong>Dirección</strong><br />
-          <a href="https://www.google.com/maps/place/EUROPOSTRES+MAJU/@-11.9898176,-77.0742235,17z/data=!3m1!4b1!4m6!3m5!1s0x9105ce5ba679629b:0xa934456619a82058!8m2!3d-11.9898176!4d-77.0716432!16s%2Fg%2F11b6vk2k1x?entry=ttu&g_ep=EgoyMDI1MDIxMi4wIKXMDSoASAFQAw%3D%3D" 
-             target="_blank" class="location-link">
-             Av. Las Palmeras 3864, Los Olivos
+        <p>
+          <strong>Dirección</strong><br />
+          <a
+            href="https://www.google.com/maps/place/EUROPOSTRES+MAJU/@-11.9898176,-77.0742235,17z/data=!3m1!4b1!4m6!3m5!1s0x9105ce5ba679629b:0xa934456619a82058!8m2!3d-11.9898176!4d-77.0716432!16s%2Fg%2F11b6vk2k1x?entry=ttu&g_ep=EgoyMDI1MDIxMi4wIKXMDSoASAFQAw%3D%3D"
+            target="_blank"
+            class="location-link"
+          >
+            Av. Las Palmeras 3864, Los Olivos
           </a>
         </p>
       </div>
     </div>
-    
 
     <!-- Selector de Idioma -->
     <LanguageSwitcherFooter id="footer-lang" />
@@ -62,192 +70,200 @@ const menuItems = {
   <hr />
 
   <div class="footer-bottom">
-    <a href="https://www.instagram.com/maju_europostres" target="_blank" class="social-icon">
+    <a
+      href="https://www.instagram.com/maju_europostres"
+      target="_blank"
+      class="social-icon"
+    >
       <img src="/instagram.svg" alt="Instagram" class="instagram-icon" />
     </a>
     <span class="footer-text">Maju @2025</span>
   </div>
 </footer>
 
-
 <style>
-.footer {
-  background: #322D2D;
-  color: #EEEDEC;
-  padding: 20px auto;
-  text-align: center;
-  position: relative;
-}
-
-.footer-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 90%;
-  margin: 0 auto;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.footer-logo {
-  margin: 10px;
-  font-family: 'Rouge Script', sans-serif;
-  font-size: clamp(40px, 8vw, 70px);
-  font-weight: 400;
-  color: #EEEDEC;
-  text-decoration: none;
-}
-
-.footer-menu {
-  list-style: none;
-  padding: 0;
-  text-align: left;
-  font-family: "Montserrat", sans-serif;
-  font-size: clamp(14px, 2vw, 18px);
-  font-weight: 500;
-}
-
-.footer-menu li {
-  margin-bottom: 10px;
-  position: relative;
-}
-
-.footer-menu a {
-  text-decoration: none;
-  color: #EEEDEC;
-  transition: color 0.3s ease;
-  position: relative;
-}
-
-.footer-menu a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -5px;
-  width: 100%;
-  height: 3px; 
-  background-color: #FFFFFF;
-  border-radius: 20px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.footer-menu a:hover::after {
-  opacity: 1;
-}
-
-.footer-menu a:hover {
-  color: #FFFFFF;
-}
-
-.footer-info {
-  display: flex;
-  gap: clamp(50px, 7vw, 120px);;
-}
-
-.contact-column {
-  text-align: center;
-}
-
-.contact-column p {
-  font-size: clamp(14px, 2vw, 18px);
-  font-family: "Montserrat", sans-serif;
-  font-weight: 400;
-  margin: 5px 0;
-}
-
-.footer-language {
-  display: flex;
-  align-items: center;
-}
-
-hr {
-  margin: 0p;
-  border: 0;
-  height: 1px;
-  background: #EEEDEC;
-}
-
-.footer-bottom {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: clamp(10px, 8vw, 15px);
-  font-size: clamp(16px, 4vw, 18px);
-  font-family: "Montserrat", sans-serif;
-}
-
-.social-icon {
-  display: flex;
-  align-items: center;
-  margin-right: 10px;
-}
-
-.instagram-icon {
-  width: 30px;
-  height: 30px;
-  transition: transform 0.3s ease-in-out, width 0.3s ease-in-out, height 0.3s ease-in-out;
-}
-
-.instagram-icon:hover {
-  transform: scale(1.1);
-}
-
-
-.phone-link, .location-link {
-  text-decoration: none;
-  color: #EEEDEC;
-  font-weight: normal;
-  transition: color 0.3s ease-in-out, text-decoration 0.3s ease-in-out;
-}
-
-.phone-link:hover, .location-link:hover {
-  color: #d4a373;
-  text-decoration: underline;
-  text-decoration-color: #d4a373;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 4px;
-}
-  
-.footer-text {
-  color: #EEEDEC;
-  line-height: 1;
-  display: flex;
-  align-items: center; 
-}
-
-@media (max-width: 1024px) {
-  .footer-info {
-    flex-direction: column;
-    gap: 10px;
+  .footer {
+    background: #322d2d;
+    color: #eeedec;
+    padding: 20px auto;
+    text-align: center;
+    position: relative;
   }
-}
 
-@media (max-width: 767px) {
   .footer-container {
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    gap: 10px;
-  }
-  
-  .footer-menu {
     display: flex;
-    flex-direction: row;
-    gap: 40px;
-    text-align: center;
+    justify-content: space-between;
     align-items: center;
-    margin: 0;
+    max-width: 90%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 20px;
   }
 
-  .footer-menu li:nth-child(2) {
-    width: 50px;
+  .footer-logo {
+    margin: 10px;
+    font-family: "Rouge Script", sans-serif;
+    font-size: clamp(40px, 8vw, 70px);
+    font-weight: 400;
+    color: #eeedec;
+    text-decoration: none;
+  }
+
+  .footer-menu {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(14px, 2vw, 18px);
+    font-weight: 500;
+  }
+
+  .footer-menu li {
+    margin-bottom: 10px;
+    position: relative;
+  }
+
+  .footer-menu a {
+    text-decoration: none;
+    color: #eeedec;
+    transition: color 0.3s ease;
+    position: relative;
+  }
+
+  .footer-menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 3px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .footer-menu a:hover::after {
+    opacity: 1;
+  }
+
+  .footer-menu a:hover {
+    color: #ffffff;
   }
 
   .footer-info {
-    flex-direction: column;
-    gap: 10px;
+    display: flex;
+    gap: clamp(50px, 7vw, 120px);
   }
-}
 
+  .contact-column {
+    text-align: center;
+  }
+
+  .contact-column p {
+    font-size: clamp(14px, 2vw, 18px);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    margin: 5px 0;
+  }
+
+  .footer-language {
+    display: flex;
+    align-items: center;
+  }
+
+  hr {
+    margin: 0p;
+    border: 0;
+    height: 1px;
+    background: #eeedec;
+  }
+
+  .footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: clamp(10px, 8vw, 15px);
+    font-size: clamp(16px, 4vw, 18px);
+    font-family: "Montserrat", sans-serif;
+  }
+
+  .social-icon {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+  }
+
+  .instagram-icon {
+    width: 30px;
+    height: 30px;
+    transition:
+      transform 0.3s ease-in-out,
+      width 0.3s ease-in-out,
+      height 0.3s ease-in-out;
+  }
+
+  .instagram-icon:hover {
+    transform: scale(1.1);
+  }
+
+  .phone-link,
+  .location-link {
+    text-decoration: none;
+    color: #eeedec;
+    font-weight: normal;
+    transition:
+      color 0.3s ease-in-out,
+      text-decoration 0.3s ease-in-out;
+  }
+
+  .phone-link:hover,
+  .location-link:hover {
+    color: #d4a373;
+    text-decoration: underline;
+    text-decoration-color: #d4a373;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+  }
+
+  .footer-text {
+    color: #eeedec;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  @media (max-width: 1024px) {
+    .footer-info {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .footer-container {
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      gap: 10px;
+    }
+
+    .footer-menu {
+      display: flex;
+      flex-direction: row;
+      gap: 40px;
+      text-align: center;
+      align-items: center;
+      margin: 0;
+    }
+
+    .footer-menu li:nth-child(2) {
+      width: 50px;
+    }
+
+    .footer-info {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
 </style>
