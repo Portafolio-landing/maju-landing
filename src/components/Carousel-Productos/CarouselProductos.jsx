@@ -69,7 +69,7 @@ export default function CarouselProductos() {
         modules={[Navigation, Pagination, Autoplay]}
         spaceBetween={0}
         loop={true}
-        autoplay={{ delay: 4000, disableOnInteraction: false }}
+        // autoplay={{ delay: 4000, disableOnInteraction: false }}
         navigation
         pagination={{ clickable: true }}
         slidesPerView={1}

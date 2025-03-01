@@ -1,7 +1,6 @@
 .carousel-container {
     width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
+    margin: 0;
     position: relative;
     overflow: hidden;
 }
@@ -12,10 +11,16 @@
     border-radius: 15px;
 }
 
+.product-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
 .product-image {
-    width: 80vw;
-    height: auto;
-    max-height: 70vh;
+    width: clamp(60%, 70%, 80%);
+    height: clamp(350px, 80vw, 550px);
     object-fit: cover;
     border-radius: 20px;
 }
@@ -23,11 +28,8 @@
 .product-info {
     position: absolute;
     bottom: 0;
-    width: 82.7%;
-    padding: 2rem 0;
-    padding-bottom: 3rem;
-    margin: 0;
-    margin-bottom: 4px;
+    width: clamp(60%, 70%, 80%);
+    padding: clamp(1rem, 2vw, 2rem);    
     text-align: center;
     background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(5px);
@@ -37,49 +39,42 @@
     justify-content: center;
     border-radius: 0 0 15px 15px;
     box-sizing: border-box;
-    margin-left: 8.7%;
 }
 
 .title-price {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0.5rem;
-    font-family: 'Waterfall', cursive;
+    gap: 0.3rem;
+    font-family: 'Waterfall', sans-serif;
     margin-bottom: 0.6rem;
     line-height: 1;
 }
 
 .title {
-    font-size: 48px;
+    font-size: clamp(30px, 5vw, 60px);
     color: #5e3023;
     margin: 0;
     text-align: center;
-    display: flex;
-    align-items: center;
 }
 
 .price {
-    font-size: 24px;
+    font-size: clamp(16px, 2vw, 24px);
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     color: #5e3023;
     margin: 0;
-    display: flex;
-    padding-top: 14px;
-    align-items: center;
+    padding-top: clamp(0.5rem, 2vw, 1.3rem);
 }
 
 .description {
     font-family: 'Montserrat', sans-serif;
     color: #333;
-    font-size: 18px;
+    font-size: clamp(12px, 2vw, 22px);
     font-weight: 400;
-    line-height: 1.5;
-    padding: 0 1.5rem;
-    max-width: 75%;
-    margin: 0 auto;
-    text-overflow: ellipsis;
+    line-height: 1.4;
+    width: 90%;
+    margin: 0 0 2rem 0;
     word-wrap: break-word;
 }
 
@@ -89,8 +84,8 @@
 
 .swiper-pagination-bullet {
     background: #5e3023 !important;
-    width: 12px;
-    height: 12px;
+    width: clamp(7px, 1vw, 12px);
+    height: clamp(7px, 1vw, 12px);
     opacity: 1;
 }
 
@@ -110,109 +105,16 @@
 }
 
 .swiper-button-prev {
-    left: 20px !important;
+    left: 10% !important;
 }
 
 .swiper-button-next {
-    right: 20px !important;
+    right: 10% !important;
 }
 
-@media (max-width: 768px) {
-    .product-image {
-        height: auto;
-        max-height: 70vh;
-    }
-
-    .product-info {
-        position: relative;
-        margin-top: -31px;
-        background: rgba(255, 255, 255, 1);
-        backdrop-filter: none;
-        padding: 2rem 0;
-        border-radius: 0 0 15px 15px;
-    }
-
-    .title {
-        font-size: 32px;
-    }
-
-    .price {
-        font-size: 18px;
-        padding-top: 7px;
-    }
-
-    .description {
-        font-size: 14px;
-        max-width: 90%;
-    }
-
-    .swiper-pagination {
-        bottom: 12px !important;
-    }
-
-    .swiper-pagination-bullet {
-        width: 8px;
-        height: 8px;
-    }
-
+@media (max-width: 767px) {
     .swiper-button-prev,
     .swiper-button-next {
         display: none !important;
     }
 }
-
-  /* Media query para celulares con ancho de 360px */
-  @media (min-width: 360px) and (max-width: 767px) {
-    .product-info {
-        position: absolute;
-        bottom: 0;
-        width: 82.5%;
-        padding: 2rem 0;
-        padding-bottom: 3rem;
-        margin: 0;
-        margin-bottom: 4px;
-        text-align: center;
-        background: rgba(255, 255, 255, 0.85);
-        backdrop-filter: blur(5px);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        border-radius: 0 0 15px 15px;
-        margin-left: 8.5%;
-    }
-    .product-image {
-        height: 350px;
-    }
-  }
-
-  /* Media query para pantallas medianas */
-  @media (min-width: 768px) and (max-width: 1023px) {    
-    .product-info {
-        position: absolute;
-        bottom: 0;
-        width: 82%;
-        padding: 2rem 0;
-        padding-bottom: 3rem;
-        margin: 0;
-        margin-bottom: 4px;
-        text-align: center;
-        background: rgba(255, 255, 255, 0.85);
-        backdrop-filter: blur(5px);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        border-radius: 0 0 15px 15px;
-        box-sizing: border-box;
-        margin-left: 9%;
-    }
-  }
-
-  /* Media query para pantallas grandes */
-  @media (min-width: 1024px) and (max-width: 1479px) {
-    .product-info {
-        width: 82.6%;
-        margin-left: 8.7%;
-    }
-  }

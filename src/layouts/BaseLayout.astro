@@ -8,7 +8,6 @@ export interface Props {
 }
 
 const { lang, title } = Astro.props as Props;
-
 ---
 
 <!DOCTYPE html>
@@ -58,9 +57,9 @@ const { lang, title } = Astro.props as Props;
     }
 
     /* Media query para pantallas medianas */
-    @media (min-width: 360px) and (max-width: 1023px) {
+    @media (max-width: 1024px) {
       main {
-        margin-top: 75px !important;
+        margin-top: 70px !important;
       }
     }
 
